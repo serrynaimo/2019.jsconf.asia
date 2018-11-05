@@ -3,14 +3,13 @@ $("#subscribeForm").ajaxForm({
 	dataType: "html",
 	beforeSubmit: function() {
 		$("#subscribeForm").removeClass("failure success").addClass("load");
-		$("#subscribeForm .msg").removeClass("play");
 	},
 	success: function(r) {
 		if(r.substr(0,6) != "Thanks") {
 			$("#subscribeForm").removeClass("load").addClass("failure");
 			$("#subscribeForm .msg span").text(r.substr(0,r.indexOf('<br/>')));
-			$("#subscribeForm .msg").addClass("play");
 			setTimeout(function() {
+				formActive = false
 				$("#subscribeForm").removeClass("failure");
 				$("#subscribeForm input[name='text']").focus();
 			},5000);
@@ -18,9 +17,9 @@ $("#subscribeForm").ajaxForm({
 		else {
 			$("#subscribeForm").removeClass("load").addClass("success");
 			setTimeout(function() {
+				formActive = false
 				$("#subscribeForm input").val("");
-				$("#subscribeForm").removeClass("success active");
-				$("#subscribeForm .msg").removeClass("play");
+				$("#subscribeForm").removeClass("success");
 			},3000);
 			setTimeout(function() {
 				window.location = "https://facebook.com/jsconfasia";
@@ -31,9 +30,20 @@ $("#subscribeForm").ajaxForm({
 		$("#subscribeForm").removeClass("load").addClass("failure");
 		$("#subscribeForm .msg span").text("Something went wrong...");
 		setTimeout(function() {
+			formActive = false
 			$("#subscribeForm").removeClass("failure");
 		},4000);
 	}
+});
+
+var formActive = false;
+$("#subscribeForm input").focus(function () {
+	formActive = true;
+	document.body.classList.add("showmenu");
+});
+
+$("#subscribeForm input").blur(function () {
+	formActive = false;
 });
 
 $("#subscribeForm .msg").click(function() {
@@ -41,26 +51,6 @@ $("#subscribeForm .msg").click(function() {
 	$("#subscribeForm input[name='email']").focus();
 });
 
-$("#subscribeForm input").focus(function(e) {
-	$("#subscribeForm").addClass("selected");
-}).blur(function(e) {
-	$("#subscribeForm").removeClass("selected");
-});
-
-$("#subscribeForm").hover(function() {
-	$("#subscribeForm").addClass("hovered");
-}, function() {
-	$("#subscribeForm").removeClass("hovered");
-});
-
-
-$("#subscribeForm input[type='email']").on("focus", function() {
-    if($("#subscribeForm input[type='text']").val() === '' && $("#subscribeForm input[type='email']").val() === '') {
-        setTimeout(function() {
-            $("#subscribeForm input[type='text']").select();
-        },1);
-    }
-});
 
 let startdate = new Date()
 const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan']
@@ -119,3 +109,82 @@ function CountDownTimer(dt, id)
 
 		timer = setInterval(showRemaining, 1000);
 }
+
+
+function detectswipe(ele,func) {
+  swipe_det = new Object();
+  swipe_det.sX = 0; swipe_det.sY = 0; swipe_det.eX = 0; swipe_det.eY = 0;
+  var min_x = 30;  //min x swipe for horizontal swipe
+  var max_x = 30;  //max x difference for vertical swipe
+  var min_y = 50;  //min y swipe for vertical swipe
+  var max_y = 60;  //max y difference for horizontal swipe
+  var direc = "";
+  // ele = document.getElementById(el);
+  ele.addEventListener('touchstart',function(e){
+    var t = e.touches[0];
+    swipe_det.sX = t.screenX;
+    swipe_det.sY = t.screenY;
+  },false);
+  ele.addEventListener('touchmove',function(e){
+    e.preventDefault();
+    var t = e.touches[0];
+    swipe_det.eX = t.screenX;
+    swipe_det.eY = t.screenY;
+  },false);
+  ele.addEventListener('touchend',function(e){
+    //horizontal detection
+    if ((((swipe_det.eX - min_x > swipe_det.sX) || (swipe_det.eX + min_x < swipe_det.sX)) && ((swipe_det.eY < swipe_det.sY + max_y) && (swipe_det.sY > swipe_det.eY - max_y) && (swipe_det.eX > 0)))) {
+      if(swipe_det.eX > swipe_det.sX) direc = "r";
+      else direc = "l";
+    }
+    //vertical detection
+    else if ((((swipe_det.eY - min_y > swipe_det.sY) || (swipe_det.eY + min_y < swipe_det.sY)) && ((swipe_det.eX < swipe_det.sX + max_x) && (swipe_det.sX > swipe_det.eX - max_x) && (swipe_det.eY > 0)))) {
+      if(swipe_det.eY > swipe_det.sY) direc = "d";
+      else direc = "u";
+    }
+
+    if (direc != "") {
+      if(typeof func == 'function') func(ele,direc);
+    }
+    direc = "";
+    swipe_det.sX = 0; swipe_det.sY = 0; swipe_det.eX = 0; swipe_det.eY = 0;
+  },false);
+}
+
+document.querySelector('.burger').addEventListener('click',function(e) {
+	document.body.classList.toggle('showmenu');
+});
+
+document.getElementById('menu').addEventListener('mouseenter',function(e) {
+	cancel = document.body.classList.contains('showmenu')
+	setTimeout(function () {
+		if (cancel === document.body.classList.contains('showmenu')) {
+			document.body.classList.add('showmenu');
+		}
+	}, 4);
+});
+document.getElementById('menu').addEventListener('mouseleave',function(e) {
+	cancel = document.body.classList.contains('showmenu')
+	setTimeout(function () {
+		if (!formActive && cancel === document.body.classList.contains('showmenu')) {
+			document.body.classList.remove('showmenu');
+		}
+	}, 4);
+});
+
+document.querySelector('.animation_meta').addEventListener('click',function(e) {
+	if (!document.body.classList.contains('showmenu')) {
+		e.stopPropagation();
+		e.preventDefault();
+		e.target.blur();
+		return false;
+	}
+});
+
+detectswipe(document.body, function myfunction(el,d) {
+  if (d === 'u') {
+		document.body.classList.add('showmenu');
+	} else if (d === 'd') {
+		document.body.classList.remove('showmenu');
+	}
+});
