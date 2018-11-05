@@ -1,5 +1,5 @@
 $("#subscribeForm").ajaxForm({
-	url: "https://2012.jsconf.asia/addsubscriber.php",
+	url: "https://2019.jsconf.asia/add.php",
 	dataType: "html",
 	beforeSubmit: function() {
 		$("#subscribeForm").removeClass("failure success").addClass("load");
