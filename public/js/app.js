@@ -2,6 +2,7 @@ $("#subscribeForm").ajaxForm({
 	url: "https://2019.jsconf.asia/add.php",
 	dataType: "html",
 	beforeSubmit: function() {
+		document.body.classList.add("showmenu");
 		$("#subscribeForm").removeClass("failure success").addClass("load");
 	},
 	success: function(r) {
