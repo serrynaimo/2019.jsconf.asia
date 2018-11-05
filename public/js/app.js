@@ -16,6 +16,7 @@ $("#subscribeForm").ajaxForm({
 		}
 		else {
 			$("#subscribeForm").removeClass("load").addClass("success");
+			$("#subscribeForm .msg span").text("Thanks! We keep you updated!");
 			setTimeout(function() {
 				formActive = false
 				$("#subscribeForm input").val("");
