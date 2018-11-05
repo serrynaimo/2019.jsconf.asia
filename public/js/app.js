@@ -152,11 +152,18 @@ function detectswipe(ele,func) {
   },false);
 }
 
+var enableHover = true;
 document.querySelector('.burger').addEventListener('click',function(e) {
 	document.body.classList.toggle('showmenu');
 });
 
+document.getElementById('menu').addEventListener("touchstart",function(e) {
+	enableHover = false;
+})
+
 document.getElementById('menu').addEventListener('mouseenter',function(e) {
+	if(!enableHover) return;
+
 	cancel = document.body.classList.contains('showmenu')
 	setTimeout(function () {
 		if (cancel === document.body.classList.contains('showmenu')) {
@@ -165,21 +172,14 @@ document.getElementById('menu').addEventListener('mouseenter',function(e) {
 	}, 4);
 });
 document.getElementById('menu').addEventListener('mouseleave',function(e) {
+	if(!enableHover) return;
+
 	cancel = document.body.classList.contains('showmenu')
 	setTimeout(function () {
 		if (!formActive && cancel === document.body.classList.contains('showmenu')) {
 			document.body.classList.remove('showmenu');
 		}
 	}, 4);
-});
-
-document.querySelector('.animation_meta').addEventListener('click',function(e) {
-	if (!document.body.classList.contains('showmenu')) {
-		e.stopPropagation();
-		e.preventDefault();
-		e.target.blur();
-		return false;
-	}
 });
 
 detectswipe(document.body, function myfunction(el,d) {
