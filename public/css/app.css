@@ -46,7 +46,7 @@ body {
 }
 
 .showmenu #menu > div {
-  background-color: rgba(0,0,0,.95);
+  background-color: rgba(0,0,0,.93);
 }
 
 
@@ -124,6 +124,7 @@ input {
   display: block;
   width: 100%;
   box-sizing: border-box;
+  font-size: .85em;
 }
 
 input[type=submit] {
