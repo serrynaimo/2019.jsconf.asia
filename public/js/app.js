@@ -3,6 +3,7 @@ $("#subscribeForm").ajaxForm({
 	dataType: "html",
 	beforeSubmit: function() {
 		document.body.classList.add("showmenu");
+		formActive = true;
 		$("#subscribeForm").removeClass("failure success").addClass("load");
 	},
 	success: function(r) {
