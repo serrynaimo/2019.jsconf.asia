@@ -3,6 +3,7 @@ module.exports = [
     glob: '/index.html',
     push: [
       '/**/*',
+      '!/lightning/**/*',
       '!/terms/**/*',
       '!/lunch/**/*'
     ]
@@ -18,5 +19,11 @@ module.exports = [
     push: [
       '/favicon.png'
     ]
-  }
+  },
+  {
+    glob: '/lightning/index.html',
+    push: [
+      '/favicon.png'
+    ]
+  },
 ]
