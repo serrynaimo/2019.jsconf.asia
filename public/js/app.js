@@ -70,7 +70,7 @@ if (request.status === 200) {
 }
 
 const nextmonth = months[startdate.getMonth() + 1]
-const target = startdate.getFullYear() < 2018 ? 'Mon, 1 ' + nextmonth + (startdate.getMonth() < 10 ? ' 2019' : ' 2018') + ' 00:00:00 +0800' : 'Thu, 13 Jun 2019 09:00:00 +0800'
+const target = startdate.getFullYear() < 2018 ? 'Mon, 1 ' + nextmonth + (startdate.getMonth() < 10 ? ' 2019' : ' 2018') + ' 00:00:00 +0800' : 'Tue, 20 Nov 2018 11:00:00 +0800'
 CountDownTimer(target, 'countdown')
 
 function CountDownTimer(dt, id)
@@ -88,9 +88,9 @@ function CountDownTimer(dt, id)
 		const now = new Date()
 		const passed = now - startjs
 		const distance = end - startdate - passed
-		if (distance <= 0) {
+		if (distance < _second) {
 				clearInterval(timer);
-				document.getElementById("counter").style.display = "none"
+				document.getElementById(id).innerHTML = '<a href="https://jsconfasia2019.pouchnation.com">&gt;&gt;&gt; NOW &lt;&lt;&lt;</a>';
 				return;
 		}
 		const days = Math.floor(distance / _day);
@@ -113,7 +113,7 @@ function CountDownTimer(dt, id)
 		timer = setInterval(showRemaining, 1000);
 }
 
-
+var shownBefore = false;
 function detectswipe(ele,func) {
   swipe_det = new Object();
   swipe_det.sX = 0; swipe_det.sY = 0; swipe_det.eX = 0; swipe_det.eY = 0;
@@ -157,6 +157,7 @@ function detectswipe(ele,func) {
 var enableHover = true;
 document.querySelector('.burger').addEventListener('click',function(e) {
 	document.body.classList.toggle('showmenu');
+	shownBefore = true
 });
 
 document.getElementById('menu').addEventListener("touchstart",function(e) {
@@ -170,6 +171,7 @@ document.getElementById('menu').addEventListener('mouseenter',function(e) {
 	setTimeout(function () {
 		if (cancel === document.body.classList.contains('showmenu')) {
 			document.body.classList.add('showmenu');
+			shownBefore = true
 		}
 	}, 4);
 });
@@ -187,7 +189,14 @@ document.getElementById('menu').addEventListener('mouseleave',function(e) {
 detectswipe(document.body, function myfunction(el,d) {
   if (d === 'u') {
 		document.body.classList.add('showmenu');
+		shownBefore = true
 	} else if (d === 'd') {
 		document.body.classList.remove('showmenu');
 	}
 });
+
+setTimeout(function () {
+	if (!shownBefore) {
+		document.body.classList.add('showmenu');
+	}
+}, 9900)

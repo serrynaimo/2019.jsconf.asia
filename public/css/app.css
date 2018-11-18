@@ -114,7 +114,7 @@ input {
   font-weight: 400;
   appearance: none;
   border: 0;
-  background: rgba(255,255,255,.15);
+  background: #333;
   color: #fff;
   border-radius: 1.2em;
   line-height: 1.3em;
@@ -123,11 +123,12 @@ input {
   display: block;
   width: 100%;
   box-sizing: border-box;
+  transition: all .2s ease-out;
   font-size: .85em;
 }
 
 input[type=submit] {
-  background: navy;
+  background: rgb(52, 140, 249);
   font-family: 'Doppio One';
   font-size: .9em;
   text-transform: uppercase;
@@ -136,29 +137,28 @@ input[type=submit] {
   appearance: none;
 }
 
-:focus {
+@keyframes rot {
+  0%, 100% {
+    filter: hue-rotate(-0deg);
+  }
+  50% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+input:not(:focus):hover {
+  filter: brightness(1.5);
+}
+
+input:focus {
   outline: none;
-  box-shadow: 0 0 0 2px rgba(125, 173, 217, .7);
+  color: #000;
+  background: #fff;
 }
 
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: #aaa;
-}
-::-moz-placeholder { /* Firefox 19+ */
-  color: #aaa;
-}
-:-ms-input-placeholder { /* IE 10+ */
-  color: #aaa;
-}
-:-moz-placeholder { /* Firefox 18- */
-  color: #aaa;
-}
-
-::selection {
-  background: rgb(125, 173, 217);
-}
-::-moz-selection {
-  background: rgb(125, 173, 217)  ;
+input:focus {
+  outline: none;
+  background: #fff;
 }
 
 #menu .animation_meta {
@@ -171,6 +171,7 @@ input[type=submit] {
 }
 
 #menu nav {
+  margin-top: -100px;
   flex: 0 0 100%;
   display: flex;
   flex-direction: column;
@@ -179,9 +180,8 @@ input[type=submit] {
 }
 
 #subscribeForm {
-  margin-top: -80px;
   width: 280px;
-  height: 114px;
+  height: 190px;
   text-align: center;
 }
 
@@ -226,9 +226,14 @@ input[type=submit] {
 }
 
 #menu a {
-  color: #fff;
+  color: rgb(52, 140, 249);
   text-decoration: none;
   display: inline-block;
+
+}
+
+#menu a:hover {
+  filter: brightness(1.5);
 }
 
 #menu .animation_meta a {
@@ -266,7 +271,23 @@ input[type=submit] {
   fill: #fff;
 }
 
-#countdown, #date {
+#date {
   font-family: 'Doppio One';
   font-size: 3vh;
+}
+
+#countdown {
+  font-size: 2em;
+  font-family: 'Doppio One';
+  line-height: 1.5em;
+  margin: .1em 0 0;
+  min-height: 36px;
+}
+
+#countdown a {
+  display: block;
+  border-radius: 1.5em;
+  border: 1px solid rgb(52, 140, 249);
+  margin: -1px;
+  animation: rot 2s linear infinite;
 }
