@@ -58,7 +58,7 @@ $("#subscribeForm .msg").click(function() {
 let startdate = new Date()
 const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan']
 const request = new XMLHttpRequest()
-request.open('GET', '/api/currentTime', false)
+request.open('GET', '/api/currentTime.php', false)
 request.send(null)
 
 if (request.status === 200) {
