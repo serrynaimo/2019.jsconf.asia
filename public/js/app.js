@@ -63,7 +63,7 @@ request.send(null)
 
 if (request.status === 200) {
 	const currentTime = request.getResponseHeader('date')
-	const currentDate = new Date(currentTime)
+	const currentDate = new Date(new Date(currentTime).getTime()-60000*90)
 	if (currentDate.toString() !== 'Invalid Date') {
 		startdate = currentDate
 	}
