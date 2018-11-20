@@ -276,15 +276,15 @@ input:focus {
   font-size: 3vh;
 }
 
-#countdown {
-  font-size: 2em;
+#getticket {
+  font-size: 1.2em;
   font-family: 'Doppio One';
   line-height: 1.5em;
-  margin: .1em 0 0;
+  margin: .1em 0 1em;
   min-height: 36px;
 }
 
-#countdown a {
+#getticket a {
   display: block;
   border-radius: 1.5em;
   border: 1px solid rgb(52, 140, 249);

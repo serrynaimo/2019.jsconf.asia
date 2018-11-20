@@ -71,7 +71,7 @@ if (request.status === 200) {
 
 const nextmonth = months[startdate.getMonth() + 1]
 const target = startdate.getFullYear() < 2018 ? 'Mon, 1 ' + nextmonth + (startdate.getMonth() < 10 ? ' 2019' : ' 2018') + ' 00:00:00 +0800' : 'Tue, 20 Nov 2018 11:00:00 +0800'
-CountDownTimer(target, 'countdown')
+// CountDownTimer(target, 'countdown')
 
 function CountDownTimer(dt, id)
 {
