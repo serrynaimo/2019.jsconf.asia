@@ -105,7 +105,7 @@
     url: 'https://codepen.io/yuanchuan/pen/QZBLpg'
   }];
   choice = Math.floor(Math.random() * art.length);
-  document.getElementById('art').src = 'art/' + art[choice].id;
+  document.getElementById('art').src = 'art/' + art[choice].id + '/index.html';
   document.getElementById('artauthor').href = art[choice].url;
   document.getElementById('artauthor').innerHTML = 'Animation: ' + art[choice].name + '<br/>by ' + art[choice].author;
   </script>
