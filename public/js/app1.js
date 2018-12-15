@@ -2,8 +2,7 @@ $("#subscribeForm").ajaxForm({
 	url: "https://2019.jsconf.asia/add.php",
 	dataType: "html",
 	beforeSubmit: function() {
-		document.body.classList.add("showmenu");
-		formActive = true;
+		$("#subscribeForm .msg span").text("");
 		$("#subscribeForm").removeClass("failure success").addClass("load");
 	},
 	success: function(r) {
@@ -11,7 +10,6 @@ $("#subscribeForm").ajaxForm({
 			$("#subscribeForm").removeClass("load").addClass("failure");
 			$("#subscribeForm .msg span").text(r.substr(0,r.indexOf('<br/>')));
 			setTimeout(function() {
-				formActive = false
 				$("#subscribeForm").removeClass("failure");
 				$("#subscribeForm input[name='text']").focus();
 			},5000);
@@ -20,7 +18,6 @@ $("#subscribeForm").ajaxForm({
 			$("#subscribeForm").removeClass("load").addClass("success");
 			$("#subscribeForm .msg span").text("Thanks! We keep you updated!");
 			setTimeout(function() {
-				formActive = false
 				$("#subscribeForm input").val("");
 				$("#subscribeForm").removeClass("success");
 			},3000);
@@ -33,20 +30,9 @@ $("#subscribeForm").ajaxForm({
 		$("#subscribeForm").removeClass("load").addClass("failure");
 		$("#subscribeForm .msg span").text("Something went wrong...");
 		setTimeout(function() {
-			formActive = false
 			$("#subscribeForm").removeClass("failure");
 		},4000);
 	}
-});
-
-var formActive = false;
-$("#subscribeForm input").focus(function () {
-	formActive = true;
-	document.body.classList.add("showmenu");
-});
-
-$("#subscribeForm input").blur(function () {
-	formActive = false;
 });
 
 $("#subscribeForm .msg").click(function() {
@@ -180,7 +166,7 @@ document.getElementById('menu').addEventListener('mouseleave',function(e) {
 
 	cancel = document.body.classList.contains('showmenu')
 	setTimeout(function () {
-		if (!formActive && cancel === document.body.classList.contains('showmenu')) {
+		if (cancel === document.body.classList.contains('showmenu')) {
 			document.body.classList.remove('showmenu');
 		}
 	}, 4);

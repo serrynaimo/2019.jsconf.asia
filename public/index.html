@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<title>JSConf.Asia Singapore 2019</title>
 	<link href='//fonts.googleapis.com/css?family=Doppio+One|Open+Sans:200,100' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="css/app.css" />
+	<link rel="stylesheet" type="text/css" href="css/app1.css" />
 	<link rel="shortcut icon" href="favicon.png" >
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	<meta property="og:title" content="JSConf.Asia - 14-16 June 2019, Singapore"/>
@@ -21,7 +21,7 @@
 <body>
 
   <section id="background">
-    <canvas id="rainbow_grid"/>
+    <iframe src="" frameborder="0" id="art"></iframe>
   </section>
 
   <section id="body">
@@ -43,32 +43,71 @@
         <path class="line middle" d="m 30,50 h 40" />
         <path class="line bottom" d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
       </svg>
-      <div class="animation_meta"><a href="https://codepen.io/jackrugile/pen/bdwvMo">Animation: Rainbow Grid<br/>by Jack Rugile</a></div>
+      <div class="animation_meta"><a id="artauthor" target="_blank" rel="noopener"></a></div>
       <nav>
-        <form id="subscribeForm" action="https://2012.jsconfasia.com/addsubscriber.php" method="get">
-          <div id="getticket"><a href="https://events.pouchnation.com/event/jsconfasia2019">GET YOUR TICKET</a></div>
-          <input type="text" name="fname" placeholder="First name" />
-          <input type="email" name="email" placeholder="Email" />
-          <input type="submit" value="Subscribe to updates" />
-          <div class="msg"><span>&nbsp;</span></div>
-        </form>
-        <a href="https://contribute.jsconf.asia">Contribute to the event</a>
+        <a onclick="document.body.classList.add('navigate', 'white'); setTimeout(function () { window.location = event.target.href }, 220); return false;" href="https://events.pouchnation.com/event/jsconfasia2019" class="getticket">GET TICKETS</a>
+        <a onclick="document.body.classList.add('navigate'); setTimeout(function () { window.location = event.target.href }, 220); return false;" href="https://contribute.jsconf.asia">CONTRIBUTE</a>
+        <a href="#" onclick="document.body.classList.add('showpopup'); document.body.classList.remove('showmenu'); return false;">GET UPDATES</a>
+        <div>
+        <a href="https://twitter.com/jsconfasia" class="sm" target="_blank" rel="noopener">
+            <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" id="svg3626" viewBox="-20 -20 320.00006 264.18703" height="244.18703" width="300.00006">              <g transform="translate(-539.17946,-568.85777)" id="layer1">
+              <path style="fill:#fff;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 633.89823,812.04479 c 112.46038,0 173.95627,-93.16765 173.95627,-173.95625 0,-2.64628 -0.0539,-5.28062 -0.1726,-7.90305 11.93799,-8.63016 22.31446,-19.39999 30.49762,-31.65984 -10.95459,4.86937 -22.74358,8.14741 -35.11071,9.62551 12.62341,-7.56929 22.31446,-19.54304 26.88583,-33.81739 -11.81284,7.00307 -24.89517,12.09297 -38.82383,14.84055 -11.15723,-11.88436 -27.04079,-19.31655 -44.62892,-19.31655 -33.76374,0 -61.14426,27.38052 -61.14426,61.13233 0,4.79784 0.5364,9.46458 1.58538,13.94057 -50.81546,-2.55686 -95.87353,-26.88582 -126.02546,-63.87991 -5.25082,9.03545 -8.27852,19.53111 -8.27852,30.73006 0,21.21186 10.79366,39.93837 27.20766,50.89296 -10.03077,-0.30992 -19.45363,-3.06348 -27.69044,-7.64676 -0.009,0.25652 -0.009,0.50661 -0.009,0.78077 0,29.60957 21.07478,54.3319 49.0513,59.93435 -5.13757,1.40062 -10.54335,2.15158 -16.12196,2.15158 -3.93364,0 -7.76596,-0.38716 -11.49099,-1.1026 7.78383,24.2932 30.35457,41.97073 57.11525,42.46543 -20.92578,16.40207 -47.28712,26.17062 -75.93712,26.17062 -4.92898,0 -9.79834,-0.28036 -14.58427,-0.84634 27.05868,17.34379 59.18936,27.46396 93.72193,27.46396"/>
+            </svg>
+        </a>
+        <a href="https://facebook.com/jsconfasia" class="sm" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="5 10 38 30"><path fill="#fff" d="M26 20v-3c0-1.3.3-2 2.4-2H31v-5h-4c-5 0-7 3.3-7 7v3h-4v5h4v15h6V25h4.4l.6-5h-5z"/></svg>
+        </a>
+        <a href="https://youtube.com/jsconfeu" class="sm" target="_blank" rel="noopener">
+          <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 71.412065 50" width="71.412064" height="50">
+            <g transform="scale(0.58823529,0.58823529)"><path fill="#fff" d="M 118.9,13.3 C 117.5,8.1 113.4,4 108.2,2.6 98.7,0 60.7,0 60.7,0 60.7,0 22.7,0 13.2,2.5 8.1,3.9 3.9,8.1 2.5,13.3 0,22.8 0,42.5 0,42.5 0,42.5 0,62.3 2.5,71.7 3.9,76.9 8,81 13.2,82.4 22.8,85 60.7,85 60.7,85 c 0,0 38,0 47.5,-2.5 5.2,-1.4 9.3,-5.5 10.7,-10.7 2.5,-9.5 2.5,-29.2 2.5,-29.2 0,0 0.1,-19.8 -2.5,-29.3 z" id="path7" inkscape:connector-curvature="0"/><polygon points="80.2,42.5 48.6,24.3 48.6,60.7 " fill="#333"/></g>
+          </svg>
+        </a>
+        </div>
       </nav>
     </div>
   </div>
 
+  <div id="popup">
+    <form id="subscribeForm" action="https://2012.jsconfasia.com/addsubscriber.php" method="get">
+      <svg onclick="document.body.classList.remove('showpopup');" aria-role='button' aria-label='Close this dialog' title='Close this dialog' class="burger close" viewBox="0 0 100 100">
+        <path class="line top" d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
+        <path class="line middle" d="m 30,50 h 40" />
+        <path class="line bottom" d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
+      </svg>
+      <h2>GET UPDATES</h2>
+      <input type="text" name="fname" placeholder="First name" />
+      <input type="email" name="email" placeholder="Email" />
+      <input type="submit" value="Subscribe to updates" />
+      <div class="msg"><span>&nbsp;</span></div>
+    </form>
+  </div>
+
   <script src="./js/jquery.min.js"></script>
   <script src="./js/jquery.form.min.js"></script>
-  <script src="./js/app.js"></script>
-  <script src="./js/rainbow_grid.js"></script>
+  <script src="./js/app1.js"></script>
 
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-31025490-16', 'auto');
-  ga('send', 'pageview');
+  ga('create', 'UA-31025490-16', 'auto'); ga('send', 'pageview');
+
+  art = [{
+    id: 'rainbowgrid',
+    name: 'Rainbow Grid',
+    author: 'Jack Rugile',
+    url: 'https://codepen.io/jackrugile/pen/bdwvMo'
+  }, {
+    id: 'strings',
+    name: 'Strings',
+    author: 'Yuan Chuan',
+    url: 'https://codepen.io/yuanchuan/pen/QZBLpg'
+  }];
+  choice = Math.floor(Math.random() * art.length);
+  document.getElementById('art').src = 'art/' + art[choice].id;
+  document.getElementById('artauthor').href = art[choice].url;
+  document.getElementById('artauthor').innerHTML = 'Animation: ' + art[choice].name + '<br/>by ' + art[choice].author;
   </script>
 </body>
 </html>
