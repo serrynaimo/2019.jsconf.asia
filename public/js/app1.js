@@ -186,3 +186,7 @@ setTimeout(function () {
 		document.body.classList.add('showmenu');
 	}
 }, 9900)
+
+window.addEventListener('pageshow', function () {
+	document.body.classList.remove('navigate', 'white');
+});
