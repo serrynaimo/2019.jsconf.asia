@@ -186,5 +186,3 @@ setTimeout(function () {
 		document.body.classList.add('showmenu');
 	}
 }, 9900)
-
-document.body.classList.remove('navigate', 'white');
