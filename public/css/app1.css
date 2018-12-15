@@ -317,6 +317,24 @@ h2 {
   transform: translateY(0);
 }
 
+#popup input {
+  transform: translateY(100px);
+  transition: transform .25s cubic-bezier(.5,.5,0,1);
+  transition-delay: .1s;
+}
+
+.showpopup #popup input {
+  transform: translateY(0);
+}
+
+.showpopup #popup input:nth-child(4) {
+  transition-duration: .35s;
+}
+
+.showpopup #popup input:nth-child(5) {
+  transition-duration: .5s;
+}
+
 @keyframes out {
   0% {
     transform: translate(100vw, 0vh);
