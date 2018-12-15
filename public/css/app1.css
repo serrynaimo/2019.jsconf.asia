@@ -345,7 +345,11 @@ h2 {
 
 @media (max-width: 500px) {
   #popup {
-    top: calc(60vh - 3.6em);
+    height: calc(40vh + 3.6em);
+    bottom: 0;
+    box-sizing: border-box;
+    top: unset;
+    align-items: flex-start;
     background: rgba(0,0,0,.93);
   }
 
