@@ -103,9 +103,14 @@
     name: 'Strings',
     author: 'Yuan Chuan',
     url: 'https://codepen.io/yuanchuan/pen/QZBLpg'
+  }, {
+    id: 'polygon-shredder',
+    name: 'Polygon Shredder',
+    author: 'Jaume Sanchez',
+    url: 'https://www.clicktorelease.com/code/polygon-shredder/#96'
   }];
   choice = Math.floor(Math.random() * art.length);
-  document.getElementById('art').src = 'art/' + art[choice].id + '/index.html';
+  document.getElementById('art').src = 'art/' + art[choice].id + '/index.html#96';
   document.getElementById('artauthor').href = art[choice].url;
   document.getElementById('artauthor').innerHTML = 'Animation: ' + art[choice].name + '<br/>by ' + art[choice].author;
   </script>
