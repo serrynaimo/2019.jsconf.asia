@@ -1,0 +1,43 @@
+<style>
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+  }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    overflow: hidden;
+  }
+  css-doodle {
+    width: 50vw;
+    height: 50vw;
+  }
+</style>
+<body style="background: #181818">
+  <script src="css-doodle.js"></script>
+  <css-doodle grid="24">
+    :doodle { 
+      grid-gap: 1px;
+      @size: 8em;
+    }
+
+    --opacity: @calc(@calc(@calc(144 - @calc(@calc(@calc(@col() - 12) * @calc(@col() - 12)) + @calc(@calc(@row() - 12) * @calc(@row() - 12)))) / 144) * 0.5);
+    background: hsla(@rand(0deg, 360deg), 88%, 83%, @var(--opacity));
+    animation: pulsate @rand(5s, 11s) ease-in-out infinite;
+    border-radius: 50%;
+
+    @keyframes pulsate {
+      0%, 100% {
+        transform: scale(@rand(0.2, 0.7));
+        filter: hue-rotate(0deg);
+      }
+      50% {
+        transform: scale(@rand(0.3, 0.9));
+        filter: hue-rotate(360deg);
+      }
+    }
+  </css-doodle>
+</body>
