@@ -142,8 +142,13 @@ function detectswipe(ele,func) {
 
 var enableHover = true;
 document.querySelector('.burger').addEventListener('click',function(e) {
-	document.body.classList.toggle('showmenu');
-	shownBefore = true
+	if (document.body.classList.contains('speakers')) {
+		document.body.classList.remove('speakers', 'showmenu');
+		document.getElementById('mainclose').classList.remove('close');
+	} else {
+		document.body.classList.toggle('showmenu');
+		shownBefore = true
+	}
 });
 
 document.getElementById('menu').addEventListener("touchstart",function(e) {
@@ -189,4 +194,5 @@ setTimeout(function () {
 
 window.addEventListener('pageshow', function () {
 	document.body.classList.remove('navigate', 'white');
+	document.body.scrollTo(0, 0);
 });

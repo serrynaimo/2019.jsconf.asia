@@ -20,11 +20,11 @@
 </head>
 <body>
 
-  <section id="background">
+  <div id="background">
     <iframe src="" frameborder="0" id="art"></iframe>
-  </section>
+  </div>
 
-  <section id="body">
+  <div id="body">
 
     <div id="js">
       <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="160 270 430 330">
@@ -34,11 +34,11 @@
     </div>
     <div id="date">14-16 JUNE 2019<br/>SINGAPORE</div>
 
-  </section>
+  </div>
 
-  <div id="menu">
-    <div>
-      <svg aria-role='button' aria-label='Toggle menu' title='Toggle menu' class="burger" viewBox="0 0 100 100">
+  <div id="roller">
+    <div id="menu">
+      <svg aria-role='button' aria-label='Toggle menu' title='Toggle menu' class="burger" id="mainclose" viewBox="0 0 100 100">
         <path class="line top" d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
         <path class="line middle" d="m 30,50 h 40" />
         <path class="line bottom" d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
@@ -46,6 +46,7 @@
       <div class="animation_meta"><a id="artauthor" target="_blank" rel="noopener"></a></div>
       <nav>
         <a onclick="document.body.classList.add('navigate', 'white'); setTimeout(function () { window.location = event.target.href }, 220); return false;" href="https://events.pouchnation.com/event/jsconfasia2019" class="getticket">GET TICKETS</a>
+        <a href="#" onclick="document.body.classList.add('showinfo'); document.body.classList.remove('showmenu'); return false;" class="speakers">SPEAKERS</a>
         <a onclick="document.body.classList.add('navigate'); setTimeout(function () { window.location = event.target.href }, 220); return false;" href="https://contribute.jsconf.asia">CONTRIBUTE</a>
         <a href="#" onclick="document.body.classList.add('showpopup'); document.body.classList.remove('showmenu'); return false;">GET UPDATES</a>
         <div>
@@ -64,6 +65,52 @@
         </a>
         </div>
       </nav>
+    </div>
+  </div>
+
+  <div id="speakers">
+    <div>
+      <svg onclick="document.body.classList.remove('showinfo');" aria-role='button' aria-label='Close this dialog' title='Close this dialog' class="burger close" viewBox="0 0 100 100">
+        <path class="line top" d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
+        <path class="line middle" d="m 30,50 h 40" />
+        <path class="line bottom" d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
+      </svg>
+      <section>
+        <h2>SPEAKERS</h2>
+        <div class="speakers">
+
+          <div class="speaker">
+            <div class="image">
+              <a href="https://twitter.com/notwaldorf"><img src="./images/monicad.jpg" alt="Picture of Monica Dinculescu" /></a>
+            </div>
+            <div class="about">
+              <h3>Monica<br/>Dinculescu</h3>
+              <p>Monica works on Magenta, in Google Brain, where she makes generative music and art with Machine Learning. In the past she's worked on Polymer, web components, and Chrome, and has probably at least once broken the Internet for you. She is unreasonably excited about emoji, wary of web fonts, and will become your best friend if you bring her cheese. On second thought, she may be a mouse.</p>
+            </div>
+          </div>
+
+          <div class="speaker">
+            <div class="image">
+              <a href="https://twitter.com/youyuxi"><img src="./images/evanyou.jpg" alt="Picture of Evan You" /></a>
+            </div>
+            <div class="about">
+              <h3>Evan<br/>You</h3>
+              <p>Evan is an independent open source developer. He created Vue.js, a popular frontend framework and now works on it full-time. Before going full-time open source, Evan worked as a core dev at Meteor, and before that as a creative technologist at Google Creative Lab.</p>
+            </div>
+          </div>
+
+          <div class="speaker">
+            <div class="image">
+              <a href="https://twitter.com/eytan_manor"><img src="./images/eytanm.jpg" alt="Picture of Eytan Manor" /></a>
+            </div>
+            <div class="about">
+              <h3>Eytan<br/>Manor</h3>
+              <p>Eytan is a JavaScript artist who codes for fun. Originally comes from the land of the Promise(), but has been traveling the world to discover its deepest secrets. Despite NPM goodies being his favorite treat, he consumes vanilla JavaScript the most, because less is more. His hobbies are eating, sleeping; and open-source... He loves open-source.</p>
+            </div>
+          </div>
+          
+        </div>
+      </section>
     </div>
   </div>
 
