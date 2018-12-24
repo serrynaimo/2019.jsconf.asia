@@ -1,0 +1,121 @@
+html, body {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  background: #181818;
+}
+
+#body {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: radial-gradient(circle, rgba(24,24,24,0) 50%, rgb(24, 24, 24) 80%);
+}
+
+#body #js svg {
+  margin-left: -12vh;
+  height: 50vh;
+  fill: #fff;
+}
+
+#body #date {
+  margin-left: -12vh;
+  font-family: 'Doppio One';
+  font-size: 4.5vh;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,.5);
+}
+
+h2 {
+  width: 100%;
+  text-align: left;
+  font-family: 'Doppio One';
+  font-size: 1.5em;
+  color: #fff;
+  font-style: italic;
+}
+
+@keyframes rot {
+  0%, 100% {
+    filter: hue-rotate(-0deg);
+  }
+  50% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* Speakers */
+
+
+#speaker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 58%;
+  right: 0;
+  bottom: 0;
+}
+
+.speaker {
+  width: 45vw;
+}
+
+.speaker .image {
+  border: 4px solid #eee;
+  width: 42vh;
+  height: 42vh;
+  border-radius: 30vh;
+}
+
+.speaker .image img {
+  width: 42vh;
+  height: 42vh;
+  border-radius: 30vh;
+}
+
+.speaker h3 {
+  font-size: 10vh;
+  font-family: 'Doppio One';
+  text-transform: uppercase;
+  font-style: italic;
+  margin: -1.9em -.45em 0;
+  text-shadow: 3px 3px 0px #fff;
+  animation: rot 2s linear infinite;
+  line-height: 1em;
+}
+
+
+.speaker p {
+  font-size: 4.5vh;
+  line-height: 1.4em;
+  margin: 1.4em 0 0 -2.5vh;
+  color: #fff;
+}
+
+
+/* Background */
+
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 33%;
+  overflow: hidden;
+}
+
+#art {
+  width: 100%;
+  height: 100vh;
+  background: #181818;
+  border: 0;
+}
