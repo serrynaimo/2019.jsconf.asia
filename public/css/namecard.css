@@ -88,7 +88,8 @@ h2 {
   text-transform: uppercase;
   font-style: italic;
   margin: -1.9em -.45em 0;
-  text-shadow: 3px 3px 0px #fff;
+  color: #fff;
+  text-shadow: 3px 3px 0px rgb(26, 140, 211);
   animation: rot 2s linear infinite;
   line-height: 1em;
 }
