@@ -363,6 +363,10 @@ h2 {
   transition: transform .1s cubic-bezier(.5,.5,0,1);
 }
 
+.speaker p a {
+  color: rgb(52, 140, 249);
+}
+
 #speakers .close {
   position: sticky;
 }
