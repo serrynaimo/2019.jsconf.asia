@@ -111,7 +111,7 @@ h2 {
 
 #roller {
   position: fixed;
-  top: calc(100vh - 3.6em);
+  top: calc(100% - 3.6em);
   left: 0;
   right: 0;
   transition: all .4s cubic-bezier(.5,.5,0,1);
@@ -291,6 +291,7 @@ h2 {
   transform: translateY(200vh);
   overflow: hidden;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   transition: all .2s cubic-bezier(.5,.5,0,1);
 }
 
@@ -298,7 +299,7 @@ h2 {
   position: relative;
   margin: 1.8em auto;
   width: calc(100vw - 50px);
-  min-height: 100vh;
+  min-height: 100%;
   max-width: 1200px;
   background-color: rgba(0,0,0,.93);
   border-radius: 5px;
@@ -372,7 +373,7 @@ h2 {
 }
 
 #speakers h2 {
-  margin: .5em 0 1.5em;
+  margin: .3em 0 1.5em;
 }
 
 @media (max-width: 768px) {
@@ -384,7 +385,7 @@ h2 {
 }
 
 .showinfo #speakers {
-  transform: translateY(0);
+  transform: unset;
 }
 
 .showinfo .speaker .image,
@@ -445,6 +446,13 @@ h2 {
 }
 
 
+.showinfo .speaker .image,
+.showinfo .speaker h3,
+.showinfo .speaker p {
+  transform: unset !important;
+}
+
+
 /* Background */
 
 #background {
@@ -458,7 +466,7 @@ h2 {
 
 #art {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background: #181818;
   border: 0;
 }

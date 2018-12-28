@@ -196,3 +196,7 @@ window.addEventListener('pageshow', function () {
 	document.body.classList.remove('navigate', 'white');
 	document.body.scrollTo(0, 0);
 });
+
+window.addEventListener('touchstart', function () {
+	document.body.classList.add('touchscreen');
+});
