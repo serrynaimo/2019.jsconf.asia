@@ -186,11 +186,13 @@ detectswipe(document.body, function myfunction(el,d) {
 	}
 });
 
+var showSpeakers = window.location.hash.toLowerCase() === "#speakers";
+
 setTimeout(function () {
 	if (!shownBefore) {
-		document.body.classList.add('showmenu');
+		document.body.classList.add(showSpeakers ? 'showinfo' : 'showmenu');
 	}
-}, 9900)
+}, showSpeakers ? 2900 : 9900)
 
 window.addEventListener('pageshow', function () {
 	document.body.classList.remove('navigate', 'white');
