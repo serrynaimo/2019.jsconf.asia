@@ -183,6 +183,8 @@ detectswipe(document.body, function myfunction(el,d) {
 		shownBefore = true
 	} else if (d === 'd') {
 		document.body.classList.remove('showmenu');
+		document.body.classList.remove('showinfo');
+		document.body.classList.remove('showpopup');
 	}
 });
 
