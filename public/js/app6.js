@@ -206,3 +206,13 @@ window.addEventListener('pageshow', function () {
 window.addEventListener('touchstart', function () {
 	document.body.classList.add('touchscreen');
 });
+
+var sponsors = document.querySelectorAll('#sponsors a');
+var spIdx = Math.floor(Math.random() * sponsors.length);
+sponsors[spIdx].classList.add('visible');
+
+setInterval(function () {
+	sponsors[spIdx].classList.remove('visible');
+	spIdx = spIdx === sponsors.length - 1 ? 0 : spIdx + 1;
+	sponsors[spIdx].classList.add('visible');
+}, 4000);
