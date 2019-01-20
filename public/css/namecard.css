@@ -102,6 +102,18 @@ h2 {
   color: #fff;
 }
 
+.sponsor {
+  position: relative;
+  left: -8vw;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+}
+
+.sponsor img {
+  margin-top: 3vh;
+  width: 30vw;
+}
 
 /* Background */
 
