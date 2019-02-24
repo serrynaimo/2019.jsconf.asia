@@ -98,7 +98,8 @@ h2 {
 .speaker p {
   font-size: 4.5vh;
   line-height: 1.4em;
-  margin: 1.4em 0 0 -2.5vh;
+  margin: 1.4em 0 0 -36.5vh;
+  text-align: center;
   color: #fff;
 }
 
