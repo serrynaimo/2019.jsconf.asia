@@ -125,6 +125,7 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    will-change: transform;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -171,12 +172,34 @@
             filter: contrast(2);
   }
 
-  .right {
-    -webkit-transform: scaleX(-1);
-        -ms-transform: scaleX(-1);
-            transform: scaleX(-1);
+  .half.right .halfContentUpper {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    border-left: calc(var(--petal-width)/4) solid #01884b;
+    border-bottom: calc(var(--petal-length)/4) solid #01884b;
+    border-top: calc(var(--petal-length)/4) solid transparent;
+    border-right: calc(var(--petal-width)/4) solid transparent;
+  }
+
+  .half.right .halfContentLower {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    border-left: calc(var(--petal-width)/4) solid #01884b;
+    border-bottom: calc(var(--petal-length)/4) solid #01884b;
+    border-top: calc(var(--petal-length)/4) solid transparent;
+    border-right: calc(var(--petal-width)/4) solid transparent;
+    -webkit-transform: scaleY(-1);
+        -ms-transform: scaleY(-1);
+            transform: scaleY(-1);
+    -webkit-filter: contrast(2);
+            filter: contrast(2);
+  }
+
+  .half.right {
     position: absolute;
-    margin-left: calc(var(--petal-width)/2 + 6px);
+    margin-left: calc(var(--petal-width)/2 + 2px);
     -webkit-filter: opacity(.4);
             filter: opacity(.4);
   }
@@ -222,42 +245,6 @@
     100% {
       -webkit-transform: scale(1.75);
               transform: scale(1.75);
-    }
-  }
-
-  @-webkit-keyframes expand {
-    0% {
-      bottom: calc(var(--petal-length)/2 * var(--contract-coef));
-    }
-    100% {
-      bottom: 0;
-    }
-  }
-
-  @keyframes expand {
-    0% {
-      bottom: calc(var(--petal-length)/2 * var(--contract-coef));
-    }
-    100% {
-      bottom: 0;
-    }
-  }
-
-  @-webkit-keyframes contract {
-    0% {
-      bottom: 0;
-    }
-    100% {
-      bottom: calc(var(--petal-length)/2 * var(--contract-coef));
-    }
-  }
-
-  @keyframes contract {
-    0% {
-      bottom: 0;
-    }
-    100% {
-      bottom: calc(var(--petal-length)/2 * var(--contract-coef));
     }
   }
   </style>

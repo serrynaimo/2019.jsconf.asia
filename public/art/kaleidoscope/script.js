@@ -6,6 +6,7 @@ var colors = ['#01884b' /*emerald green */, '#cc2eaf' /*purple*/, '#ea1e10'/*red
 var contractCoef = -1;
 var squareLength = 100;
 var numKaleidoscope = 3;
+var petalLength = 42;
 
 function addFlowerToCell() {
   var newFlower = document.createElement("div");
@@ -69,8 +70,13 @@ function changeColor() {
         for (let p of petalContent.childNodes) { // half left and half right
           for (let c of p.childNodes) {// halfContent
             for(let d of c.childNodes) {// halfContentUpper and  halfContentLower
-              d.style.borderRight = "calc(var(--petal-width)/4) solid " + colors[colorIndx];
-              d.style.borderBottom = "calc(var(--petal-length)/4) solid " + colors[colorIndx];
+              if(p.classList.contains('right')) { // this is the right half
+                d.style.borderLeft = "calc(var(--petal-width)/4) solid " + colors[colorIndx];
+                d.style.borderBottom = "calc(var(--petal-length)/4) solid " + colors[colorIndx];
+              }  else {
+                d.style.borderRight = "calc(var(--petal-width)/4) solid " + colors[colorIndx];
+                d.style.borderBottom = "calc(var(--petal-length)/4) solid " + colors[colorIndx];
+              }
             }
           }
         }
@@ -129,13 +135,17 @@ window.onload = function() {
     }
     function contract() {
       for (i = 0; i < half.length; i++) {
-          half[i].style.animation = "contract 1s ease-out";
+          half[i].style.transform = "translate3d(0," + petalLength/2 * contractCoef + "px,0)";
+          half[i].style.transitionTimingFunction = "ease-out";
+          half[i].style.transitionDuration = "1s";
       }
       setTimeout(expand, 1000);
     }
     function expand() {
       for (i = 0; i < half.length; i++) {
-          half[i].style.animation = "expand 1s ease-out";
+          half[i].style.transform = "translate3d(0," + petalLength/-2 * contractCoef + "px,0)";
+          half[i].style.transitionTimingFunction = "ease-out";
+          half[i].style.transitionDuration = "1s";
       }
       setTimeout(contract, 1000);
     }
