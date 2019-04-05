@@ -1,0 +1,341 @@
+<html>
+  <style>
+  :root {
+    --square-length: 60px;
+    --petal-length: 42px;
+    --petal-width: 15px;
+    --contract-coef: -1;
+  }
+
+  .playground {
+    width: 100vw;
+    height: 100vh;
+    background-color: #101011;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    overflow: hidden;
+  }
+  .kaleidoscopeContainer {
+    display: flex;
+    -webkit-animation-name: spin;
+            animation-name: spin;
+    -webkit-animation-duration: 60s;
+            animation-duration: 60s;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate-reverse;
+            animation-direction: alternate-reverse;
+  }
+
+  .kaleidoscope {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    overflow: hidden;
+    opacity: 0.7;
+    -webkit-animation-name: zoom;
+            animation-name: zoom;
+    -webkit-animation-duration: 35s;
+            animation-duration: 35s;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+  }
+
+  .row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .cell {
+    width: var(--square-length);
+    height:var(--square-length);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .emptyCell {
+    width: var(--square-length);
+    height:var(--square-length);
+  }
+
+  .flower {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+  }
+
+  .petal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+
+  .petalContent {
+    -webkit-transform: translateX(calc(var(--petal-width)/-2));
+        -ms-transform: translateX(calc(var(--petal-width)/-2));
+            transform: translateX(calc(var(--petal-width)/-2));
+  }
+
+  .one {
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+
+  .two {
+    -webkit-transform: rotate(135deg);
+        -ms-transform: rotate(135deg);
+            transform: rotate(135deg);
+  }
+
+  .three {
+    -webkit-transform: rotate(225deg);
+        -ms-transform: rotate(225deg);
+            transform: rotate(225deg);
+  }
+
+  .four {
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+
+  .half {
+    position: absolute;
+    bottom: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .halfContent {
+    margin-left: calc(var(--petal-width)/-2);
+    height: var(--petal-length);
+    width: 2px;
+    margin-left: -1px;
+    border-radius: 2px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .halfContentUpper {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    border-right: calc(var(--petal-width)/4) solid #01884b;
+    border-bottom: calc(var(--petal-length)/4) solid #01884b;
+    border-top: calc(var(--petal-length)/4) solid transparent;
+    border-left: calc(var(--petal-width)/4) solid transparent;
+  }
+
+  .halfContentLower {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    border-right: calc(var(--petal-width)/4) solid #01884b;
+    border-bottom: calc(var(--petal-length)/4) solid #01884b;
+    border-top: calc(var(--petal-length)/4) solid transparent;
+    border-left: calc(var(--petal-width)/4) solid transparent;
+    -webkit-transform: scaleY(-1);
+        -ms-transform: scaleY(-1);
+            transform: scaleY(-1);
+    -webkit-filter: contrast(2);
+            filter: contrast(2);
+  }
+
+  .right {
+    -webkit-transform: scaleX(-1);
+        -ms-transform: scaleX(-1);
+            transform: scaleX(-1);
+    position: absolute;
+    margin-left: calc(var(--petal-width)/2 + 6px);
+    -webkit-filter: opacity(.4);
+            filter: opacity(.4);
+  }
+
+  @-webkit-keyframes spin {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+
+  @-webkit-keyframes zoom {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    100% {
+      -webkit-transform: scale(1.75);
+              transform: scale(1.75);
+    }
+  }
+
+  @keyframes zoom {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    100% {
+      -webkit-transform: scale(1.75);
+              transform: scale(1.75);
+    }
+  }
+
+  @-webkit-keyframes expand {
+    0% {
+      bottom: calc(var(--petal-length)/2 * var(--contract-coef));
+    }
+    100% {
+      bottom: 0;
+    }
+  }
+
+  @keyframes expand {
+    0% {
+      bottom: calc(var(--petal-length)/2 * var(--contract-coef));
+    }
+    100% {
+      bottom: 0;
+    }
+  }
+
+  @-webkit-keyframes contract {
+    0% {
+      bottom: 0;
+    }
+    100% {
+      bottom: calc(var(--petal-length)/2 * var(--contract-coef));
+    }
+  }
+
+  @keyframes contract {
+    0% {
+      bottom: 0;
+    }
+    100% {
+      bottom: calc(var(--petal-length)/2 * var(--contract-coef));
+    }
+  }
+  </style>
+  <head>
+    <link rel=¨stylesheet¨ type=¨text/css¨ href=¨styles.css¨>
+  </head>
+  <body>
+    <script src="script.js"></script>
+
+    <div class="playground">
+      <div class="kaleidoscopeContainer">
+      <div class="kaleidoscope">
+        <div class="row">
+          <div class="emptyCell"></div>
+          <div class="emptyCell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="emptyCell"></div>
+          <div class="emptyCell"></div>
+        </div>
+        <div class="row">
+          <div class="emptyCell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="emptyCell"></div>
+        </div>
+        <div class="row">
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+        </div>
+        <div class="row">
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+        </div>
+        <div class="row">
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+        </div>
+        <div class="row">
+          <div class="emptyCell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="emptyCell"></div>
+        </div>
+        <div class="row">
+          <div class="emptyCell"></div>
+          <div class="emptyCell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="emptyCell"></div>
+          <div class="emptyCell"></div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  </body>
+</html>
