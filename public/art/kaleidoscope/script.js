@@ -135,7 +135,7 @@ window.onload = function() {
     }
     function contract() {
       for (i = 0; i < half.length; i++) {
-          half[i].style.transform = "translate3d(0," + petalLength/2 * contractCoef + "px,0)";
+          half[i].style.transform = "translate3d(0," + petalLength/-2 * contractCoef + "px,0)";
           half[i].style.transitionTimingFunction = "ease-out";
           half[i].style.transitionDuration = "1s";
       }
@@ -143,7 +143,7 @@ window.onload = function() {
     }
     function expand() {
       for (i = 0; i < half.length; i++) {
-          half[i].style.transform = "translate3d(0," + petalLength/-2 * contractCoef + "px,0)";
+          half[i].style.transform = "translate3d(0," + petalLength/2 * contractCoef + "px,0)";
           half[i].style.transitionTimingFunction = "ease-out";
           half[i].style.transitionDuration = "1s";
       }
