@@ -20,8 +20,8 @@ const colorMax = 2 * Math.PI;
 // 100 ticks to complete one sine cycle
 const colorJump = 2 * Math.PI / 1000;
 
-let x = 0;
-let y = 0;
+let x = 10;
+let y = 10;
 let vectorX = 1;
 let vectorY = 1;
 // using 3 sine curves offset at every thirds
@@ -55,14 +55,15 @@ function moveCollision() {
 function draw() {
   if (pause > pauseGap) {
     // reset
-
-    console.log(img, img.width, img.height);
+    ctx.clearRect(0,0,maxWidth, maxHeight);
+    ctx.globalCompositeOperation = "destination-over";
+    if (img.complete) {
+      ctx.drawImage(img, x, y);
+    }
     setStrokeColor();
-    ctx.globalCompositeOperation = 'source-over';
+    ctx.globalCompositeOperation = "source-atop";
     ctx.fillRect(0, 0, maxWidth, maxHeight);
-    ctx.globalCompositeOperation = 'destination-in';
-    ctx.drawImage(img, x, y);
-    pause = 0;
+    pause = 0; 
     moveCollision();
   }
   pause += 1;
