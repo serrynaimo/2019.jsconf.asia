@@ -308,12 +308,12 @@ h2 {
 }
 
 #speakers section {
-  max-width: 980px;
   margin: 0 auto;
   padding: 0 15px 15px 50px;
   color: #fff;
 }
 
+/*
 .speakers {
   display: flex;
   flex-wrap: wrap;
@@ -367,6 +367,7 @@ h2 {
 .speaker p a {
   color: rgb(52, 140, 249);
 }
+*/
 
 #speakers .close {
   position: absolute;
@@ -388,7 +389,7 @@ h2 {
 .showinfo #speakers {
   transform: unset;
 }
-
+/*
 .showinfo .speaker .image,
 .showinfo .speaker p {
   transform: translateY(0) scale(1);
@@ -451,6 +452,226 @@ h2 {
 .showinfo .speaker h3,
 .showinfo .speaker p {
   transform: unset !important;
+}
+*/
+
+/* Program */
+
+#speakers .speakers {
+  margin-left: -28px;
+  padding-top: 50px;
+  text-align: center;
+}
+
+#speakers .day {
+  text-align: left;
+  margin-bottom: 100px;
+  position: relative;
+  display: inline-block;
+  margin-left: 80px;
+  width: 300px;
+}
+
+#speakers .day > h4 {
+    color: #fff;
+    font-size: .9em;
+    padding: 5px;
+    margin: 0 auto;
+    width: 160px;
+    position: relative;
+    left: -91px;
+    transform: rotate(-45deg);
+    transform-origin: 9% 86%;
+    text-transform: uppercase;
+}
+
+
+#speakers .speaker {
+    position: relative;
+    clear: left;
+    min-height: 65px;
+    transition: all .2s ease-in;
+    cursor: pointer;
+    margin: 16px 0 0 -10px;
+    float: left;
+}
+
+
+#speakers .speaker:not(.workshop):before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: -11px;
+    bottom: -5px;
+    border-left: #777 1px solid;
+    z-index: 2;
+    width: 0;
+}
+
+#speakers .speaker.workshop:before {
+  content: "";
+  position: absolute;
+  left: -69px;
+  top: -20px;
+  bottom: -5px;
+  background: #111;
+  border: #777 1px solid;
+  border-radius: 5px;
+  z-index: 2;
+  right: -3px;
+}
+
+#speakers .speaker.workshop > * {
+  position: relative;
+  z-index: 5;
+}
+
+#speakers .speaker.workshop + .speaker.workshop:before {
+  top: -30px;
+  border-top: 0;
+  border-radius: 0 0 5px 5px;
+  z-index: 2;
+}
+
+
+#speakers .speaker:after {
+  content: "";
+  position: absolute;
+  left: -24px;
+  top: 25px;
+  background: #fff;
+  z-index: 3;
+  padding: 4px;
+  width: 1px;
+  height: 1px;
+  border-radius: 5px;
+  transition: background .2s ease-out;
+}
+
+#speakers .speaker > span:not(.img) {
+  transition: all .2s ease-out;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.8em;
+}
+
+#speakers .speaker a > img {
+    max-height: 1.6em;
+}
+
+
+#speakers .speaker > img {
+    position: relative;
+    z-index: 4;
+    float: left;
+    margin-top: 0;
+    height: 70px;
+    width: 70px;
+    margin: -7px 16px 0 -56px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,1);
+    transition: all .2s ease-out;
+}
+
+#speakers .speaker > img + img {
+    margin-left: -40px;
+}
+
+#speakers .speaker > h3 {
+    color: #fff;
+    margin-top: 2px;
+    margin-left: -2px;
+    font-size: 1em;
+    font-family: 'Doppio One';
+    text-transform: uppercase;
+    font-style: italic;
+    width: 300px;
+    position: relative;
+}
+
+#speakers .speaker > h4 {
+    margin: -14px 0 -5px 0;
+    text-align: left;
+    font-weight: 200;
+    color: #fff;
+    font-size: .9em;
+}
+
+#speakers .speaker.break > h4 {
+    margin-left: 0px;
+}
+
+#speakers .speaker:not(.break):hover > img,
+#speakers .speaker.open:not(.break) > img {
+  transform: scale(1.2);
+}
+
+#speakers .speaker:not(.break):hover > span:not(.img),
+#speakers .speaker.open:not(.break) > span:not(.img){
+  
+}
+
+#speakers .speaker > p a {
+    color: #fff;
+}
+
+#speakers .speaker > p {
+    clear: left;
+    width: 300px;
+    padding-top: 6px;
+    margin-left: 0px;
+    font-weight: 200;
+    letter-spacing: .02em;
+    font-size: 0.8em;
+    line-height: 1.3em;
+    height: 0;
+    margin-top: 10px;
+    margin-bottom: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: opacity .3s ease-out;
+    text-align: left;
+}
+
+#speakers .speaker > p + p {
+    font-style: italic;
+}
+
+#speakers .speaker.open > p {
+    opacity: 1;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+#speakers .speaker > img {
+    height: 70px;
+    width: 70px;
+}
+
+#speakers .speaker h4 a {
+    font-size: .9em;
+    color: #9AE0FF;
+    text-transform: none;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+#speakers .speaker h3 a:hover {
+    color: #fff;
+}
+
+#speakers .speaker.break {
+    cursor: default;
+}
+
+
+@media all and (max-width: 720px) {
+  #speakers .day {
+    margin-left: 51px;
+  }
+
+  #speakers .workshop:before {
+    border-radius: 0;
+  }
 }
 
 

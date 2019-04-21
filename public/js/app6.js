@@ -216,3 +216,7 @@ setInterval(function () {
 	spIdx = spIdx === sponsors.length - 1 ? 0 : spIdx + 1;
 	sponsors[spIdx].classList.add('visible');
 }, 4000);
+
+$('.speaker').click(function(e) {
+	$(e.currentTarget).toggleClass('open');
+});
