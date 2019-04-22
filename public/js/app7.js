@@ -190,7 +190,7 @@ detectswipe(document.body, function myfunction(el,d) {
 	}
 });
 
-var showSpeakers = window.location.hash.toLowerCase() === "#speakers";
+var showSpeakers = window.location.hash.toLowerCase() === "#speakers" || window.location.hash.toLowerCase() === "#program";
 
 setTimeout(function () {
 	if (!shownBefore) {

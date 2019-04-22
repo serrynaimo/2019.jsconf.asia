@@ -325,6 +325,7 @@ h2 {
 #speakers .subnav a {
   color: #aaa;
   margin-right: .3em;
+  font-size: .9em;
   transition: color .2s ease-out;
 }
 
@@ -357,7 +358,7 @@ h2 {
 }
 
 #speakers a[name] {
-  margin-bottom: 80px;
+  margin-bottom: 20px;
   display: inline-block;
 }
 
@@ -367,6 +368,7 @@ h2 {
   display: inline-block;
   margin-left: 80px;
   width: 290px;
+  margin-top: 60px;
 }
 
 #speakers .day > h4 {
@@ -425,12 +427,17 @@ h2 {
   z-index: 5;
 }
 
+#speakers .speaker.workshop > img {
+  margin-left: -52px;
+  margin-right: 12px;
+}
+
 #speakers .speaker.workshop > span:after {
-  content: " \00B7  WORKSHOP"
+  content: "WORKSHOP"
 }
 
 #speakers .speaker.lecture > span:after {
-  content: " \00B7  LECTURE TRACK"
+  content: "LECTURE TRACK"
 }
 
 #speakers .speaker.workshop > p {
@@ -490,6 +497,10 @@ h2 {
     margin-left: -40px;
 }
 
+#speakers .speaker.workshop > img + img {
+  margin-left: -35px;
+}
+
 #speakers .speaker img + h3,
 #speakers .speaker img + h3 + h4 {
   margin-left: 34px;
@@ -497,7 +508,7 @@ h2 {
 
 #speakers .speaker img + img + h3,
 #speakers .speaker img + img + h3 + h4 {
-  margin-left: 86px;
+  margin-left: 85px;
 }
 
 #speakers .speaker > h3 {
@@ -525,7 +536,7 @@ h2 {
 
 #speakers .speaker:not(.break):hover > img,
 #speakers .speaker.open:not(.break) > img {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 #speakers .speaker:not(.break):hover > h4 a,
