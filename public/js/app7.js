@@ -196,7 +196,7 @@ setTimeout(function () {
 	if (!shownBefore) {
 		document.body.classList.add(showSpeakers ? 'showinfo' : 'showmenu');
 	}
-}, showSpeakers ? 2900 : 9900)
+}, showSpeakers ? 1900 : 9900)
 
 window.addEventListener('pageshow', function () {
 	document.body.classList.remove('navigate', 'white');
