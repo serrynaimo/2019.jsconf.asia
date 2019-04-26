@@ -21,7 +21,7 @@
 <body>
 
   <div id="background" style="background: #222;">
-    <!--<iframe src="" frameborder="0" id="art"></iframe>-->
+    <iframe src="" frameborder="0" id="art"></iframe>
   </div>
 
   <div id="body">
@@ -500,9 +500,9 @@
             <div class="speaker workshop">
               <span></span>
               <img loading="lazy" src="images/rymea.jpg" />
-              <img loading="lazy" src="images/istvan.jpg" />
+              <img loading="lazy" src="images/melanieea.jpg" />
               <h3><a href="https://mozilla.org" target="_blank" rel="noopener"><img loading="lazy" src="images/mozilla.svg" alt="Sponsored by Mozilla" style="margin: -0.2em 0em -0.3em -0.2em;" /></a><br/>Deploying and Building WebThings</h3>
-              <h4>Ryme Assaad <a href="https://twitter.com/rymeassaad" target="_blank" rel="noopener">@rymeassaad</a><br/>István Szmozsánszky "Flaki" <a href="https://twitter.com/slsoftworks" target="_blank" rel="noopener">@slsoftworks</a></h4>
+              <h4>Ryme Assaad <a href="https://twitter.com/rymeassaad" target="_blank" rel="noopener">@rymeassaad</a><br/>Mel El Azzi <a href="https://twitter.com/mel_z_" target="_blank" rel="noopener">@mel_z_</a></h4>
               <p>
                 <b>This workshop will be conducted twice.<br/>First at 1PM and again at 3PM.</b><br/><br/>
                 We will demonstrate Mozilla’s <a href="https://iot.mozilla.org" target="_blank" rel="noopener">WebThings Gateway</a>, an IoT framework to protect user privacy and security, and to improve cross-brand interoperability. We will also show how to develop and build your own custom "web things" out of microcontroller boards. We will demonstrate javascript examples using the <a href="https://www.moddable.com" target="_blank" rel="noopener">Moddable SDK</a>, then get “hands-on” using MicroBlocks.<br/><br/>
@@ -513,7 +513,8 @@
                 Ryme Assaad is cofounder & managing partner at Kapstone Co, myiolab and SEFY International<br/>
                 She was a TechWomen fellow 2018 and interned at Mozilla. <br/>
                 She is currently a TechSpeaker and working with the Mozilla Web of Things (WoT) community towards a decentralized Internet of Things with improved standards around security, privacy and interoperability.<br/><br/>
-                István (or Flaki, for short) is a JavaScript world-domination prophet, engineer &amp; trainer from Budapest. He runs his own consulting business Skylark, is a Frontend Trainer @ DPC Consulting and a longtime Mozilla-contributor. He contributes to various open source projects like Firefox, Firefox OS, Rust, Servo and the Tessel Project.<br/>His favorite topics include service workers, progressive webapps and JS on microcontrollers.
+                Mel is a cybersecurity consultant at Booz Allen Hamilton, cofounder at Myiolab and a hardware hacker. She has extensive experience in industrial cybersecurity and testing. <br/>
+                She won several awards, including the IoT-Leb hackathon (1st place), the Hack The Plan[e]t competition at Defcon 2018 (1st Runner Up), and the TechWomen 2018 Action Plan (implementing an IoT-based initiative)
               </p>
             </div>
             <div class="speaker workshop">
@@ -936,12 +937,12 @@
     name: 'Particles',
     author: 'Manoj Prasad',
     url: 'https://github.com/kamprasad2007/particles'
-  }/*, {
+  }, {
   	id: 'kaleidoscope',
   	name: 'Kaleidoscope',
   	author: 'Nguyen Tuong Van',
   	url: 'https://codepen.io/tvan/pen/gyOJKm'
-  }*/];
+  }];
   choice = Math.floor(Math.random() * art.length);
   document.getElementById('art').src = 'art/' + art[choice].id + '/index.html#96';
   document.getElementById('artauthor').href = art[choice].url;
