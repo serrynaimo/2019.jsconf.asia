@@ -185,18 +185,20 @@ detectswipe(document.body, function myfunction(el,d) {
 		document.body.classList.remove('showmenu');
 		document.body.classList.remove('showpopup');
 		if (document.getElementById('speakers').scrollTop === 0) {
-			document.body.classList.remove('showinfo');
+			document.body.classList.remove('showmoreinfo showspeakers');
 		}
 	}
 });
 
-var showSpeakers = window.location.hash.toLowerCase() === "#speakers" || window.location.hash.toLowerCase() === "#program";
+var showSpeakers = ['#speakers', '#program', '#friday', '#thursday', '#saturday', '#sunday'].includes(window.location.hash.toLowerCase());
+var showMoreInfo = ['#moreinfo'].includes(window.location.hash.toLowerCase());
+var showUpdates = ['#updates'].includes(window.location.hash.toLowerCase());
 
 setTimeout(function () {
 	if (!shownBefore) {
-		document.body.classList.add(showSpeakers ? 'showinfo' : 'showmenu');
+		document.body.classList.add(showSpeakers ? 'showspeakers' : (showMoreInfo ? 'showmoreinfo' : (showUpdates ? 'showupdates' : 'showmenu')));
 	}
-}, showSpeakers ? 1900 : 9900)
+}, showSpeakers || showMoreInfo || showUpdates ? 1900 : 9900)
 
 window.addEventListener('pageshow', function () {
 	document.body.classList.remove('navigate', 'white');

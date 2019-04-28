@@ -122,7 +122,7 @@ h2 {
   transform: translateY(-40vh);
 }
 
-.showinfo #roller, .showpopup #roller {
+.showmoreinfo #roller, .showspeakers #roller, .showpopup #roller {
   opacity: 0;
 }
 
@@ -280,9 +280,9 @@ h2 {
   }
 }
 
-/* Speakers */
+/* Info Layer */
 
-#speakers {
+.info {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -295,7 +295,7 @@ h2 {
   transition: all .2s cubic-bezier(.5,.5,0,1);
 }
 
-#speakers > div {
+.info > div {
   position: relative;
   margin: 1.8em auto;
   width: calc(100vw - 50px);
@@ -307,47 +307,53 @@ h2 {
   box-sizing: border-box;
 }
 
-#speakers section {
+.info section {
   margin: 0 auto;
   padding: 0 30px 50px 60px;
   color: #fff;
 }
 
-#speakers .close {
+.info .close {
   position: absolute;
   position: sticky;
 }
 
-#speakers h2 {
+.info h2 {
   margin: .31em 0;
 }
 
-#speakers .subnav a {
+.info .subnav a {
   color: #aaa;
   margin-right: .3em;
   font-size: .9em;
   transition: color .2s ease-out;
 }
 
-#speakers .subnav a:hover {
+.info .subnav a:hover {
   color: #fff;
 }
 
 @media (max-width: 768px) {
-  #speakers > div {
+  .info > div {
     width: 100vw;
     border-radius: 0;
     margin: 0;
   }
 
-  #speakers section {
+  .info section {
     padding: 0 15px 50px 51px;
   }
 }
 
-.showinfo #speakers {
+.showspeakers #speakers {
   transform: unset;
 }
+
+.showmoreinfo #moreinfo {
+  transform: unset;
+}
+
+
 
 /* Program */
 
@@ -611,6 +617,14 @@ h2 {
     border-radius: 0;
   }
 }
+
+
+/* More Info */
+
+#moreinfo {
+
+}
+
 
 
 /* Background */

@@ -18,10 +18,10 @@
 	<meta name="title" content="JSConf.Asia - 14-16 June 2019, Singapore"/>
 	<meta name="description" content="Southeast Asia's largest web developer conference. Spread the word. Follow us on Twitter @jsconfasia"/>
 </head>
-<body>
+<body style="background: black; color: #fff; font-family: Arial, Helvetica, sans-serif;">
 
   <div id="background" style="background: #222;">
-    <iframe src="" frameborder="0" id="art"></iframe>
+    <!iframe src="" frameborder="0" id="art"></iframe>
   </div>
 
   <div id="body">
@@ -64,8 +64,9 @@
       <div class="animation_meta"><a id="artauthor" target="_blank" rel="noopener"></a></div>
       <nav>
         <a onclick="document.body.classList.add('navigate', 'white'); setTimeout(function () { window.location = event.target.href }, 220); return false;" href="https://events.pouchnation.com/event/jsconfasia2019" class="getticket">GET TICKETS</a>
-        <a href="#" onclick="document.body.classList.add('showinfo'); document.body.classList.remove('showmenu'); return false;" class="speakers">PROGRAM</a>
-        <a href="#" onclick="document.body.classList.add('showpopup'); document.body.classList.remove('showmenu'); return false;">GET UPDATES</a>
+        <a href="#program" onclick="document.body.classList.add('showspeakers'); document.body.classList.remove('showmenu');" class="speakers">PROGRAM</a>
+        <a href="#moreinfo" onclick="document.body.classList.add('showmoreinfo'); document.body.classList.remove('showmenu');" class="speakers">MORE INFO</a>
+        <a href="#updates" onclick="document.body.classList.add('showpopup'); document.body.classList.remove('showmenu');">GET UPDATES</a>
         <div>
         <a href="https://twitter.com/jsconfasia" class="sm" target="_blank" rel="noopener">
             <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" id="svg3626" viewBox="-20 -20 320.00006 264.18703" height="244.18703" width="300.00006">              <g transform="translate(-539.17946,-568.85777)" id="layer1">
@@ -85,19 +86,20 @@
     </div>
   </div>
 
-  <div id="speakers">
+  <div class="info" id="speakers">
     <div>
-      <svg onclick="document.body.classList.remove('showinfo');" aria-role='button' aria-label='Close this dialog' title='Close this dialog' class="burger close" viewBox="0 0 100 100">
+      <svg onclick="document.body.classList.remove('showspeakers');" aria-role='button' aria-label='Close this dialog' title='Close this dialog' class="burger close" viewBox="0 0 100 100">
         <path class="line top" d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
         <path class="line middle" d="m 30,50 h 40" />
         <path class="line bottom" d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
       </svg>
       <section>
+        <a name="program"></a>
         <h2>PROGRAM</h2>
         <div class="subnav"><a href="#thursday">Thursday</a> <a href="#friday">Friday</a> <a href="#saturday">Saturday</a> <a href="#sunday">Sunday</a></div>
         <div class="speakers">
-          <a name="thursday"></a>
           <div class="day thursday">
+            <a name="thursday"></a>
             <h4>Thursday 13th</h4>
             <div class="speaker break open">
               <span>7 PM</span>
@@ -108,8 +110,8 @@
           </div>
         </div>
         <div class="speakers">
-          <a name="friday"></a>
           <div class="day friday">
+            <a name="friday"></a>
             <h4>Friday 14th</h4>
             <div class="speaker break open">
               <span>8 AM</span>
@@ -385,8 +387,8 @@
               </p>
             </div>
           </div>
-          <a name="saturday"></a>
           <div class="day saturday">
+            <a name="saturday"></a>
             <h4>Saturday 15th</h4>
             <div class="speaker break open">
               <span>8:30 AM</span>
@@ -649,8 +651,8 @@
               </p>
             </div>
           </div>
-          <a name="sunday"></a>
           <div class="day sunday">
+            <a name="sunday"></a>
             <h4>Sunday 16th</h4>
             <div class="speaker break">
               <span>8:30 AM</span>
@@ -765,7 +767,7 @@
                 In this workshop we’re going to look at the basics of Web Assembly and see what is already in the browsers today and what is yet to come. From there we will implement a real performance heavy task in our browser. We will compare the performance of our Web Assembly code to a plain JavaScript version.
                 Afterwards you will be able to decide when to use Web Assembly and what specific performance benefits It will give you.<br/><br/>
                 <b>Requirements:</b><br/>
-                Bring a laptop. Have Node.js and a recent web-browser, Git and NodeJS installed. If local wifi allows it we will be working with http-server package locally and access this from our smartphones. If not we might use a service like Zeit Cloud (<a href="https://zeit.co/now" target="_blank" rel="noopener nofollow">https://zeit.co/now</a>).
+                Bring a laptop. Have a recent web-browser, Git and NodeJS installed. If local wifi allows it we will be working with http-server package locally and access this from our smartphones. If not we might use a service like Zeit Cloud (<a href="https://zeit.co/now" target="_blank" rel="noopener nofollow">https://zeit.co/now</a>).
               </p>
               <p>
                 Patrick started his programming journey as a Java Developer but became hooked on Web Development very quickly. At Zühlke he has been able to quickly gain a lot of expertise in various projects and industries transforming portals, platforms, calculators and many more applications into proper responsive web applications. His love for the web has grown through the years only surpassed by his love for burgers! So if you know the best burger place in Singapore, hit him up!
@@ -774,11 +776,13 @@
             <div class="speaker workshop">
               <span></span>
               <img loading="lazy" src="images/asimh.jpg" />
-              <h3>Solving Problems with Tenserflow.js</h3>
+              <h3>Introduction to Machine Learning with TensorFlow.js</h3>
               <h4>Asim Hussain <a href="https://twitter.com/jawache" target="_blank">@jawache</a></h4>
               <p>
+                Learn how to build and train Neural Networks using the most popular Machine Learning framework for JavaScript, TensorFlow.js. This is a practical workshop where you'll learn "hands-on" by building several different applications from scratch using TensorFlow.js. If you have ever been interested in Machine Learning, if you want to get a taste for what this exciting field has to offer, if you want to be able to talk to other Machine Learning/AI specialists in a language they understand, then this workshop is for you.<br/><br/>
                 <b>Requirements:</b><br/>
-                Bring a laptop. Have Node.js and a recent web-browser, Git and NodeJS installed.
+                Bring a laptop. Have a recent Google Chrome, Git and NodeJS installed.
+                You will need to run a local web server and serve the contents of a directory if you don't know how to do that Asim recommends downloading <a href="https://code.visualstudio.com/" target="_blank" rel="noopener nofollow">VS Code</a> and install the <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer" target="_blank" rel="noopener nofollow">live server plugin</a>.
               </p>
               <p>
                 Asim is a developer, trainer, author and speaker with over 18 years experience working for organisations such as the European Space Agency, Google and now Microsoft, where he is leading Developer Advocacy for EMEA.
@@ -793,7 +797,7 @@
                 This workshop will deal at a high-level with predicting where a particular satellite will be from moment to moment (orbital mechanics), and then with real-time steering of an antenna and Doppler-correction of a radio's tuning.<br/>
                 Weather permitting, we'll then go outside and do it for real with a couple of amateur satellites!<br/><br/>
                 <b>Requirements:</b><br/>
-                Bring a laptop. Have Node.js and a recent web-browser, Git and NodeJS installed.
+                Bring a laptop. Have a recent web-browser, Git and NodeJS installed.
               </p>
               <p>
                 Roland is Chief Privacy Officer for TrustSphere where he is responsible for the company's information policy and practices. He is a HackerspaceSG founding member and FOSSASIA organiser, holds a Computer Science degree from UTS, and is an avid dancer, runner, and ham radio operator with a particular interest in space.
@@ -810,7 +814,7 @@
                 Join this workshop!<br/>
                 Learn strategies for planning your tests, bring your laptop for some hands-on on different testing techniques and libraries for testing the backend to the frontend on a RealWorld project, and finally let's hook your tests up to your favorite CI/CD!<br/><br/>
                 <b>Requirements:</b><br/>
-                Bring a laptop. Have Node.js and a recent web-browser, Git and NodeJS installed.
+                Bring a laptop. Have a recent web-browser, Git and NodeJS installed.
               </p>
               <p>
                 Shi Ling is the CEO and co-founder of UI-licious, a tool to help software teams rapidly test and monitor end-to-end user journeys for their web app. She's been building web apps since jQuery, obsessing over performance and padding, and these days testing and accessibility for the front-end. She can also do kung-fu, but these days she mostly code-foo.
@@ -871,7 +875,48 @@
     </div>
   </div>
 
+  <div class="info" id="moreinfo">
+    <div>
+      <svg onclick="document.body.classList.remove('showmoreinfo');" aria-role='button' aria-label='Close this dialog' title='Close this dialog' class="burger close" viewBox="0 0 100 100">
+        <path class="line top" d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
+        <path class="line middle" d="m 30,50 h 40" />
+        <path class="line bottom" d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
+      </svg>
+      <section>
+        <a name="moreinfo"></a>
+        <h2>EVENT INFO</h2>
+        <div class="subnav"><a href="#">About</a></div>
+        <p>
+          About JSConf.Asia 2019
+          Conference blurb
+
+          DevFest.Asia 2019
+          - Tamas workshop
+          - Node.js getting started
+
+          Coming to SINGAPORE
+          - Arrival
+          - Accommodation
+
+          During the event
+          - Venue Access
+          - Talks
+          - Workshops
+          - Livestream/Recording/Photos
+          - Child-care
+          - Accessibility
+          - Prayer Room
+          - Code of conduct
+
+          Past Events
+          JSConf World Wide
+        </p>
+      </section>
+    </div>
+  </div>
+
   <div id="popup">
+    <a name="updates"></a>
     <form id="subscribeForm" action="https://2012.jsconfasia.com/addsubscriber.php" method="get">
       <svg onclick="document.body.classList.remove('showpopup');" aria-role='button' aria-label='Close this dialog' title='Close this dialog' class="burger close" viewBox="0 0 100 100">
         <path class="line top" d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
