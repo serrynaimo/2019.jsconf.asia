@@ -498,6 +498,7 @@ h2 {
     border-radius: 50%;
     border: 2px solid rgba(255,255,255,1);
     transition: all .2s ease-out;
+    background: #444;
 }
 
 #speakers .speaker > img + img {
@@ -725,6 +726,11 @@ button.animtoggle {
   height: 2.3em;
   border-radius: 50%;
   border: 1px solid #aaa;
+}
+
+button.animtoggle:focus {
+  outline: 0;
+  box-shadow: 0 0 1px 1px rgb(52, 140, 249); 
 }
 
 button.animtoggle:before {
