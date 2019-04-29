@@ -55,6 +55,18 @@ if (request.status === 200) {
 	}
 }
 
+function animtoggle () {
+	if (localStorage && localStorage.getItem('animation')) {
+		document.body.classList.remove('noanim');
+		document.getElementById('art').src = 'art/' + art[choice].id + '/index.html#96';
+		localStorage.removeItem('animation');
+	} else {
+		document.body.classList.add('noanim');
+		document.getElementById('art').src = '';
+		localStorage && localStorage.setItem('animation', 'off');
+	}
+}
+
 const nextmonth = months[startdate.getMonth() + 1]
 const target = startdate.getFullYear() < 2018 ? 'Mon, 1 ' + nextmonth + (startdate.getMonth() < 10 ? ' 2019' : ' 2018') + ' 00:00:00 +0800' : 'Tue, 20 Nov 2018 11:00:00 +0800'
 // CountDownTimer(target, 'countdown')

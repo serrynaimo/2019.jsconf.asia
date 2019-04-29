@@ -713,6 +713,7 @@ h2 {
 
 button.animtoggle {
   position: absolute;
+  cursor: pointer;
   font-size: .8em;
   right: 15px;
   top: 15px;
