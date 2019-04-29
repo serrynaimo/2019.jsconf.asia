@@ -105,8 +105,8 @@ window.onload = function() {
         currentFlower.style.transitionTimingFunction = "ease-in";
         currentFlower.style.transitionDuration = "2s";
     }
-    setTimeout(changeColor, 7000);
   }, 2000);
+  requestInterval(changeColor, 7000);
   requestInterval(function() {
     contractCoef *=  -1;
   }, 8000);
