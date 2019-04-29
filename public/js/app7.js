@@ -191,7 +191,7 @@ detectswipe(document.body, function myfunction(el,d) {
 });
 
 var showSpeakers = ['#speakers', '#program', '#friday', '#thursday', '#saturday', '#sunday'].includes(window.location.hash.toLowerCase());
-var showMoreInfo = ['#moreinfo'].includes(window.location.hash.toLowerCase());
+var showMoreInfo = ['#moreinfo', '#devfest', '#singapore', '#event', '#jsconf'].includes(window.location.hash.toLowerCase());
 var showUpdates = ['#updates'].includes(window.location.hash.toLowerCase());
 
 setTimeout(function () {

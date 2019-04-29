@@ -20,8 +20,8 @@
 </head>
 <body style="background: black; color: #fff; font-family: Arial, Helvetica, sans-serif;">
 
-  <div id="background" style="background: #222;">
-    <!iframe src="" frameborder="0" id="art"></iframe>
+  <div id="background" style="background-color: #222;">
+    <iframe src="" frameborder="0" id="art"></iframe>
   </div>
 
   <div id="body">
@@ -61,11 +61,14 @@
         <path class="line middle" d="m 30,50 h 40" />
         <path class="line bottom" d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
       </svg>
-      <div class="animation_meta"><a id="artauthor" target="_blank" rel="noopener"></a></div>
+      <button class="animtoggle" onclick="document.body.classList.toggle('noanim');" title="Play/Pause"></button>
+      <div class="animation_meta">
+        <a id="artauthor" target="_blank" rel="noopener"></a>
+      </div>
       <nav>
         <a onclick="document.body.classList.add('navigate', 'white'); setTimeout(function () { window.location = event.target.href }, 220); return false;" href="https://events.pouchnation.com/event/jsconfasia2019" class="getticket">GET TICKETS</a>
         <a href="#program" onclick="document.body.classList.add('showspeakers'); document.body.classList.remove('showmenu');" class="speakers">PROGRAM</a>
-        <a href="#moreinfo" onclick="document.body.classList.add('showmoreinfo'); document.body.classList.remove('showmenu');" class="speakers">MORE INFO</a>
+        <a href="#moreinfo" onclick="document.body.classList.add('showmoreinfo'); document.body.classList.remove('showmenu');" class="speakers">ABOUT</a>
         <a href="#updates" onclick="document.body.classList.add('showpopup'); document.body.classList.remove('showmenu');">GET UPDATES</a>
         <div>
         <a href="https://twitter.com/jsconfasia" class="sm" target="_blank" rel="noopener">
@@ -74,7 +77,7 @@
             </svg>
         </a>
         <a href="https://facebook.com/jsconfasia" class="sm" target="_blank" rel="noopener">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="5 10 38 30"><path fill="#fff" d="M26 20v-3c0-1.3.3-2 2.4-2H31v-5h-4c-5 0-7 3.3-7 7v3h-4v5h4v15h6V25h4.4l.6-5h-5z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="5 10 38 30"><path fill="#fff" d="M26 20v-3c0-1.3.3-2 2.4-2H31v-5h-4c-5 0-7 3.3-7 7v3h-4v5h4v15h5V25h4.4l.6-5h-5z"/></svg>
         </a>
         <a href="https://youtube.com/jsconfeu" class="sm" target="_blank" rel="noopener">
           <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 71.412065 50" width="71.412064" height="50">
@@ -101,6 +104,12 @@
           <div class="day thursday">
             <a name="thursday"></a>
             <h4>Thursday 13th</h4>
+            <div class="speaker break open" style="cursor: pointer;" onclick="document.body.classList.remove('showspeakers'); document.body.classList.add('showmoreinfo'); location='#devfest'; event.preventDefault(); return false;">
+              <span>1 PM</span>
+              <h3>DevFest.Asia Workshops</h3>
+              <h4>Found8, 128 Prinsep St</h4>
+              <p>Separate ticket required</p>
+            </div>
             <div class="speaker break open">
               <span>7 PM</span>
               <h3><a href="https://developer.nexmo.com" target="_blank" rel="noopener"><img loading="lazy" src="images/nexmos.svg" alt="Sponsored by Nexmo - The Vonage API Platform" style="height: 1.25em; margin: 0 0 -.07em .23em;" /></a> Welcome Social</h3>
@@ -742,8 +751,13 @@
             </div>
             <div class="speaker workshop lecture">
                 <span></span>
+                <img loading="lazy" src="images/dylanb.jpg" />
+                <img loading="lazy" src="images/ignacioc.jpg" />
                 <h3><a href="https://here.com" style="margin: -1em 0 0em; padding-bottom: .2em; display: block;" target="_blank" rel="noopener"><img loading="lazy" src="images/here.svg" alt="Sponsored by HERE Technologies" style="max-height: 4em; margin: 1em .3em 0 0; float: left;" /></a><br/>Interactive 3D Web Mapping</h3>
-                <h4>Dylan Babbs &amp; Ignacio Julve Castro</h4>
+                <h4>
+                  Dylan Babbs <a href="https://twitter.com/dbabbs" target="_blank" rel="noopener">@dbabbs</a><br/>
+                  Ignacio Julve Castro
+                </h4>
                 <p>
                     In this workshop, get your hands dirty with harp.gl: a new web-based, open-source, 3D map visualization framework from HERE.<br/>
                     You’ll learn how to:<br/>
@@ -751,10 +765,13 @@
                     - Customize the look and feel of your map to match your organization’s look and feel<br/>
                     - Store and manage your geodata in the cloud with HERE XYZ in order to visualize it on a map<br/>
                     - Develop compelling data visualizations with existing visualization layers and a data-driven styling grammar<br/>
-                    - Visualize complex 3D objects on a map
+                    - Visualize complex 3D objects on a map<br/><br/>
+                    <b>Requirements:</b><br/>
+                    Bring a laptop. Have a recent web-browser, Git and NodeJS installed together with npm, yarn, and lerna.
                 </p>
                 <p>
-                  
+                  Dylan is a Product Manager for HERE Technologies in Seattle, WA working on APIs and developer tools for location-based technologies and maps. Dylan is interested in tools and techniques for visualization on the web and enjoys working with React.<br/><br/>
+                  Ignacio is an Engineering Manager at HERE Technologies, where he focusses on Cloud Services and Web Rendering. He is a strong advocate on being close to the real problems and getting his hands dirty. Trying always to face issues from the customer point of view so that the team works on the right topics.
                 </p>
               </div>
             <div class="speaker workshop">
@@ -884,33 +901,196 @@
       </svg>
       <section>
         <a name="moreinfo"></a>
-        <h2>EVENT INFO</h2>
-        <div class="subnav"><a href="#">About</a></div>
-        <p>
-          About JSConf.Asia 2019
-          Conference blurb
+        <h2>ABOUT</h2>
+        <div class="subnav"><a href="#moreinfo">About</a> <a href="#devfest">DevFest</a> <a href="#singapore">Singapore</a> <a href="#event">Event Info</a> <a href="#jsconf">JSConf</a></div>
+        <div class="content">
+          <p>
+            JSConf.Asia 2019 is a 3 day long celebration of the web platform, its technology, impact and people. It is the seventh edition of Southeast Asia’s largest and possibly most loved community event, organised from developers for developers with the aim to educate, inspire and entertain around open source software and the web. Our curated line-up covers 40+ talks, lectures and workshops on the latest in web design, JS, CSS, UX, front-end web development as well as Node and software engineering fundamentals. This year will mark the first time that we are stretching our efforts into the arts as an additional, conscious component of the conference experience.
+          </p>
+          <p>
+            Join us and so many of the different people who create and build the web every day, enjoy our very special Southeast Asian hospitality, learn, make friends and be surprised. We're excited to welcome you.
+          </p>
+          <p>
+            <span style="float: left; height: 3em; margin-right: .5em; filter: grayscale()">&#x1F4CD;</span>
+            <a href="https://www.google.com/maps/place/LASALLE+College+of+the+Arts/@1.3029095,103.8494058,17z/data=!3m1!4b1!4m5!3m4!1s0x31da19bbe54abb45:0xed0ecef2d74379c!8m2!3d1.3029095!4d103.8515945" target="_blank" rel="noopener">LASALLE College of the Arts</a><br/>
+            1 McNally St</br>
+            Singapore 187940
+          </p>
+          <br/>
+          <a class="button" href="https://jsconfasia2019.pouchnation.com" target="_blank" rel="noopener">Get your JSConf.Asia 2019 ticket</a>
 
-          DevFest.Asia 2019
-          - Tamas workshop
-          - Node.js getting started
+          <a name="devfest"></a>
+          <h4>DevFest.Asia 2019</h4>
+          <p>A collection of events adjacent to JSConf.Asia 2019</p>
+          <ul>
+            <li>
+              <h5>
+                <span>12th of June - 7pm:</span><br/>
+                <a href="https://www.meetup.com/Singapore-JS/" target="_blank" rel="noopener">SingaporeJS</a>
+              </h5>
+              <p>
+                Singapore's local JavaScript meetup is inviting developers to share knowledge and grow your skills around JavaScript, Node.js, and the modern web.
+              </p>
+              <br/>
+              <a class="button" href="https://www.meetup.com/Singapore-JS/" target="_blank" rel="noopener">Join on meetup.com</a>
+            </li>
+            <li>
+              <h5>
+                <span>13th of June - 1pm:</span><br/>
+                <a href="https://ti.to/full-stack-training/vue-js-performance-pwa-singapore" target="_blank" rel="noopener">Web Performance & Progressive Web Apps in Vue.js</a>
+              </h5>
+              <p>
+                During the workshop we'll learn about Progressive Web Applications as well as Web Performance - both applicable to the Vue.js Framework.<br/>
+                Experienced workshop host Tamas Piros will host this personal session. Tamas is a developer evangelist and technical instructor. He has more than a decade of experience working with large, prestigious organisations and throughout his career, he has delivered training classes all over the world to both technical and non-technical audiences.<br/><br/>
+                The session will be conducted at:<br/>
+                Found8, 128 Prinsep St, Singapore 188655
+              </p>
+              <br/>
+              <a class="button" href="https://ti.to/full-stack-training/vue-js-performance-pwa-singapore" target="_blank" rel="noopener">Last tickets on sale at $250</a>
+            </li>
+            <!--<li>
+                <h5>
+                  13th of June, 1pm:<br/>
+                  <a href="" target="_blank" rel="noopener"></a>
+                </h5>
+                <p>
+                  
+                </p>
+                <br/>
+                <a href="" class="button" target="_blank" rel="noopener">Get your ticket for $30</a>
+              </li>-->
+          </ul>
 
-          Coming to SINGAPORE
-          - Arrival
-          - Accommodation
+          <a name="singapore"></a>
+          <h4>Staying in SINGAPORE</h4>
+          <ul>
+            <li>
+              <h5>Arrival</h5>
+              <p>
+                You'll most likely fly to Singapore's objectively most amazing Changi Airport with its <a href="https://www.jewelchangiairport.com" target="_blank" rel="noopener">new fancy Jewel</a>.<br/>
+                The Singapore Ruby community has created a <a href="https://github.com/rubysg/singapore" target="_blank" rel="noopener">good overview</a> to find your way around the sunny city-state. <a href="https://wikitravel.org/en/Singapore" target="_blank" rel="noopener">WikiTravel</a> has more depth.<br/>
+              </p>
+              <p>
+                To get to our venue you can use the blue Downtown MRT Line exits Rochor or Bencoolen.
+              </p>
+            </li>
+            <li>
+              <h5>Accommodation</h5>
+              <p>
+                We are collaborating with <a href="https://www.hotelgsingapore.com" target="_blank" rel="noopener">Hotel G</a> as our event hotel and you can get our best rate using the code JSCONF2019 on their website. It's located 2 walking minutes from our venue.
+              </p>
+              <p>
+                Otherwise there is a <a href="https://www.agoda.com/en-sg/pages/agoda/default/DestinationSearchResult.aspx?asq=mmHGhCHBHVnq%2F8TTJG1TdZufa9Vwpz6XltTHq4n%2B9gPi3%2BLxLU%2BbGSlJw%2BDSafoU850vOrDhotKAFthgvADLPEjEwtMBMLUQxItEFVlZN%2FJWiEsQSW%2FMmeeHFuPfXNMOt3zS%2BzUfYaRLY5pjcpTj8zEaujGkocBIcFPWtMmUgow4SwVpQ8%2FlMdYffIsZowOjCS0Z9JxPuGT3sSnN6r1HIUrTEcwjkbaY7AphTlnBra9uGApAvL%2FmbMXVH323KYZF&city=4064&cid=1733091&tick=636921464000&isdym=true&searchterm=Singapore%2C%201%20McNally%20Street&txtuuid=ca761c2e-c78f-40ee-84f4-1d679905fd86&languageId=1&userId=aa9086ac-6913-4acf-af50-515ae8eb508e&sessionId=hl0hkow15w0txeirpftk5on4&pageTypeId=1&origin=DE&locale=en-SG&aid=170975&currencyCode=SGD&htmlLanguage=en-sg&cultureInfoName=en-SG&ckuid=aa9086ac-6913-4acf-af50-515ae8eb508e&prid=0&checkIn=2019-06-13&checkOut=2019-06-17&rooms=1&adults=2&children=0&priceCur=SGD&los=4&textToSearch=Singapore%2C%201%20McNally%20Street&productType=-1&travellerType=1&familyMode=off&cid=1733091" target="_blank" rel="noopener">huge amount of hotels with decent prices close by our venue.</a>
+              </p>
+            </li>
+          </ul>
 
-          During the event
-          - Venue Access
-          - Talks
-          - Workshops
-          - Livestream/Recording/Photos
-          - Child-care
-          - Accessibility
-          - Prayer Room
-          - Code of conduct
+          <a name="event"></a>
+          <h4>During the event</h4>
+          <ul>
+            <li>
+              <h5>Venue Access</h5>
+              <p>
+                The venue opens 8am till 9:30pm all event days and access to event rooms and services will only be granted to people wearing our conference wristbands. You can register with your named ticket and your valid photo ID at our Nexmo Welcome Party on the 13th of June or during all event days at our registration desk to receive your wristband.
+              </p>
+            </li>
+            <li>
+              <h5>Dressing right</h5>
+              <p>
+                Our green lounge and other parts of the venue are outside and under the venues large canopy providing protection from the sun and rain. Depending on the weather it can be very warm so we recommend light clothing.<br/>
+                On the other hand our theatre and workshop rooms are air-conditioned and can be a bit cold. It's a good idea to have a long-sleeve pullover or small blanket with you.
+              </p>
+            </li>
+            <li>
+              <h5>Talks</h5>
+              <p>
+                All talks and keynotes will take place in the Singapore Airlines Theater in the basement. They are live-streamed and recorded and will be published on the <a href="https://youtube.com/jsconfeu" target="_blank" rel="noopener">JSConf world-wide YouTube channel</a> after the event.
+              </p>
+            </li>
+            <li>
+              <h5>Workshops</h5>
+              <p>
+                Workshop rooms are located at various locations around the event venue and assigned based on interest short before the event. Please check the registration desk at the green lounge to locate your workshop room during our lunch break. Some workshops might be recorded by the good people at <a href="https://engineers.sg" target="_blank" rel="noopener">engineers.sg</a> and published on their YouTube channel.
+              </p>
+            </li>
+            <li>
+              <h5>Food &amp; Drinks</h5>
+              <p>
+                We provide a light breakfast, break snacks and a complete buffet lunch as part of your conference ticket on all days. We're offering vegetarian, vegan and halal food options. Should you have special dietary needs that you find not met by our selection, please contact the registration desk at our green lounge and we will assist you ordering alternatives.
+              </p>
+              <p>
+                Water and non-alcoholic drinks are provided before 5pm throughout the event. Afterwards and at social events we will also provide alcoholic beverages as part of your confernce ticket.
+              </p>
+            </li>
+            <li>
+              <h5>Photos &amp; Videos</h5>
+              <p>
+                You're welcome to take and share photos and  videos using the hashtag #jsconfasia. We'd like you to respect that <b>people wearing a yellow badge holder/lanyard do not want to be photographed</b>.
+              </p>
+            </li>
+            <li>
+              <h5>WiFi Internet Access</h5>
+              <p>
+                We outfit the green lounge and the Singapore Airlines Theatre with our own event WiFi. You will also be able to use LASALLE's WiFi service everywhere in the event venue but its internet access is limited.
+              </p>
+            </li>
+            <li>
+              <h5>Accessibility</h5>
+              <p>
+                Our event venue is entirely wheel-chair accessible and we do offer live-transcription services via our YouTube live-stream. Should you need assistance, please contact our registration desk at the green lounge for help.
+              </p>
+            </li>
+            <li>
+              <h5>Praying Room</h5>
+              <p>
+                Male and female praying rooms are located at Basement 2 of Block E of the venue and are accessible via the car park.
+              </p>
+            </li>
+            <li>
+              <h5>Child-care</h5>
+              <p>
+                The <a href="http://www.lifechildcare.edu.sg" target="_blank" rel="noopener">Life Care Society</a> is located opposite our event-venue and offers child care for infants and children up to the age of 6 from 7am - 7pm.
+              </p>
+            </li>
+            <li>
+              <h5>Code of Conduct</h5>
+              <p>
+                The JSConf.Asia team is dedicated to providing a harassment-free conference experience for everyone, regardless of gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion (or lack thereof), or technology choices. We do not tolerate harassment of conference participants in any form. Sexual language and imagery is not appropriate for any conference venue, including talks, workshops, parties, Twitter and other online media. Conference participants violating these rules may be sanctioned or expelled from the conference without a refund at the discretion of the conference organisers.
+              </p>
+              <p>
+                Please make contacting our staff your first move should you feel uncomfortable for any reason. <a href="https://jsconf.com/codeofconduct.html" target="_blank" rel="noopener">A less quick version</a>
+              </p>
+            </li>
+            <li>
+              <h5>Privacy</h5>
+              <p>
+                We don't share names or contact information with anybody unless you give us explicit consent to do so during the online event check-in or by registering your wristband with a sponsor.
+              </p>
+              <p>
+                See our complete <a href="terms/" target="_blank" rel="noopener">terms &amp; conditions</a>.
+              </p>
+            </li>
+          </ul>
 
-          Past Events
-          JSConf World Wide
-        </p>
+          <br/><br/>
+          <a name="jsconf"></a>
+          <p style="text-align: center;">
+            <a href="http://jsconf.com" rel="noopener" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="logo" viewBox="0 0 630 630" style='width: 100px; height: 100px;'>
+            <g>
+              <rect id="background" x="0" y="0" width="630" height="630" stroke="#fff" stroke-width="5px" fill="none"></rect>
+              <path id="j" fill="#fff" d="m 165.65,526.47375 48.2125,-29.1775 C 223.16375,513.7875 231.625,527.74 251.92,527.74 c 19.45375,0 31.71875,-7.60975 31.71875,-37.21 l 0,-201.3 59.20375,0 0,202.1375 c 0,61.32 -35.94375,89.23125 -88.385,89.23125 -47.36125,0 -74.8525,-24.52875 -88.8075,-54.13"></path>
+              <path id="s" fill="#fff" d="m 375,520.13 48.20625,-27.91125 c 12.69,20.72375 29.1825,35.9475 58.36125,35.9475 24.53125,0 40.17375,-12.26475 40.17375,-29.18125 0,-20.29875 -16.06875,-27.48875 -43.135,-39.32625 l -14.7975,-6.3475 c -42.715,-18.18125 -71.05,-41.0175 -71.05,-89.2275 0,-44.40375 33.83125,-78.2375 86.695,-78.2375 37.6375,0 64.7025,13.11125 84.15375,47.36625 l -46.09625,29.60125 c -10.15,-18.1825 -21.1425,-25.37125 -38.0575,-25.37125 -17.33875,0 -28.335,10.995 -28.335,25.37125 0,17.7625 10.99625,24.9525 36.3675,35.94875 l 14.8,6.3425 c 50.325,21.56875 78.66,43.5575 78.66,93.03375 0,53.2875 -41.86625,82.465 -98.11,82.465 -54.97625,0 -90.5,-26.2175 -107.83625,-60.47375"></path>
+            </g>
+            </svg></a><br/><br/>
+            Check out our past conferences:<br/>
+            <a href="https://2018.jsconf.asia" target="_blank">2018</a>
+             - <a href="https://2016.jsconf.asia" target="_blank">2016</a>
+             - <a href="https://2015.jsconf.asia" target="_blank">2015</a>
+             - <a href="https://2014.jsconf.asia" target="_blank">2014</a>
+             - <a href="https://2013.jsconf.asia" target="_blank">2013</a>
+             - <a href="https://2012.jsconf.asia" target="_blank">2012</a>
+          </p>
+        </div>
       </section>
     </div>
   </div>

@@ -162,6 +162,7 @@ h2 {
   font-size: 0.85em;
   text-align: right;
   font-weight: 200;
+  margin-right: 35px;
 }
 
 #menu nav {
@@ -621,8 +622,70 @@ h2 {
 
 /* More Info */
 
-#moreinfo {
+#moreinfo .content {
+  max-width: 500px;
+  padding-right: 20px;
+  margin: 70px auto 20px;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+}
 
+#moreinfo h4 {
+  font-size: 2em;
+  font-family: 'Doppio One';
+  text-transform: uppercase;
+  font-style: italic;
+  text-shadow: 3px 3px 0 #1a8cd3;
+  animation: rot 2s linear infinite;
+  line-height: 1em;
+  margin: 2em 0 0 -.1em;
+  transform: translateY(100px) scale(3);
+  transform-origin: 52% 58%;
+  transition: transform .3s cubic-bezier(.5,.5,0,1);
+}
+
+.content a {
+  color: #fff;
+}
+
+.showmoreinfo #moreinfo h4 {
+  transform: translateY(0) scale(1);
+}
+
+#moreinfo .content p {
+  font-weight: 200;
+  letter-spacing: 0.02em;
+}
+
+#moreinfo h5 {
+  font-size: 1.1em;
+  margin-bottom: .5em;
+}
+
+#moreinfo h5 a {
+  color: #fff;
+}
+
+#moreinfo h5 span {
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+#moreinfo .content li {
+  margin-bottom: 3em;
+}
+
+#moreinfo .content li p {
+  margin: .8em 0;
+}
+
+#moreinfo a.button {
+  display: inline-block;
+  color: #1a8cd3;
+  border: 1px solid #1a8cd3;
+  border-radius: 3px;
+  font-weight: bold;
+  padding: .5em 1em;
+  text-decoration: none;
 }
 
 
@@ -636,6 +699,42 @@ h2 {
   bottom: 0;
   right: 0;
   overflow: hidden;
+}
+
+.noanim #background {
+  background-image: url('../images/bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position:  center;
+}
+.noanim #background iframe {
+  display: none;
+}
+
+button.animtoggle {
+  position: absolute;
+  font-size: .8em;
+  right: 15px;
+  top: 15px;
+  color: #aaa;
+  appearance: none;
+  background: transparent;
+  width: 2.3em;
+  text-align: center;
+  height: 2.3em;
+  border-radius: 50%;
+  border: 1px solid #aaa;
+}
+
+button.animtoggle:before {
+  content: '||';
+  font-weight: bold;
+  line-height: 1em;
+}
+
+.noanim button.animtoggle:before {
+  content: '\25B6';
+  line-height: 1.9em;
 }
 
 .sponsors {
