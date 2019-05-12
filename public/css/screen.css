@@ -1,0 +1,68 @@
+#speakers.override .speaker {
+  position: absolute;
+  width: calc(100% - 200px);
+  left: 70px;
+  top: 40px;
+  font-size: 3.6em;
+  text-shadow: 2px 2px 4px rgba(0,0,0,.5);
+}
+
+#speakers.override .speaker > * {
+  margin-left: 34px;
+  margin-bottom: .3em;
+}
+
+#speakers.override h4 + span, #speakers.override h3 + span  {
+  display: block;
+  margin-top: 3em;
+  overflow: hidden;
+  color: transparent !important;
+  text-shadow: none;
+}
+
+#speakers.override h4 + span:before, #speakers.override h3 + span:before {
+  content: "COMING UP";
+  color: #aaa !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,.5);
+}
+
+#speakers.override .speaker:before {
+  border-left: 0;
+}
+
+#speakers.override .speaker:after {
+  display: none;
+}
+
+#speakers.override .speaker > img {
+  display: none;
+}
+
+#speakers.override .speaker > h3 {
+  width: auto;
+}
+
+#speakers.override .speaker > h4 > a {
+  display: none;
+}
+
+#speakers.override .speaker > p {
+  display: none;
+}
+
+.fade {
+  transition: opacity 9s linear;
+  opacity: 1;
+}
+
+.fade.hidden {
+  opacity: 0;
+}
+
+#body { 
+  transform: scale(1.3);
+}
+
+#all {
+  width: 125vw;
+}
