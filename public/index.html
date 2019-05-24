@@ -1216,7 +1216,9 @@
     document.body.classList.add('noanim');
   }
   else {
-    document.getElementById('art').src = 'art/' + art[choice].id + '/index.html#96';
+    addEventListener('load', function () {
+      document.getElementById('art').src = 'art/' + art[choice].id + '/index.html#96';
+    });
   }
   document.getElementById('artauthor').href = art[choice].url;
   document.getElementById('artauthor').innerHTML = 'Animation: ' + art[choice].name + '<br/>by ' + art[choice].author;
