@@ -112,7 +112,7 @@ h2 {
   display: inline-block;
   margin-left: 80px;
   width: 290px;
-  margin-top: 90px;
+  margin-top: 0;
 }
 
 #speakers .day > h4 {

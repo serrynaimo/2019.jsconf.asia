@@ -8,14 +8,20 @@
   <link rel="stylesheet" type="text/css" href="./css/screen.css">
 	<link rel="shortcut icon" href="https://2018.jsconf.asia/favicon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"></head>
-<body class="">
+<body class="withText">
 
   <div id="background" class="fade hidden">
     <iframe src="" frameborder="0" id="art"></iframe>
   </div>
 
-  <section id="body">
+  <section id="text">
+    <div class="speaker">
+      <span></span>
+      <h3>Welcome to JSConf.Asia 2019</h3>
+    </div>
+  </section>
 
+  <section id="body">
     <div id="js">
       <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="160 270 430 330">
         <path d="m 165.65,526.47375 48.2125,-29.1775 C 223.16375,513.7875 231.625,527.74 251.92,527.74 c 19.45375,0 31.71875,-7.60975 31.71875,-37.21 l 0,-201.3 59.20375,0 0,202.1375 c 0,61.32 -35.94375,89.23125 -88.385,89.23125 -47.36125,0 -74.8525,-24.52875 -88.8075,-54.13"></path>
@@ -23,12 +29,6 @@
       </svg>
     </div>
     <div id="date">14-16 JUNE 2019<br/>SINGAPORE</div>
-  </section>
-
-  <section id="speakers" class="override">
-    <div class="speaker">
-      <span>4:30 PM</span>
-    </div>
   </section>
 
   <script src="./js/jquery.min.js"></script>
@@ -41,13 +41,13 @@
 
 	function receiveMessage(event)
 	{
-	  $('#speakers .speaker').html(event.data);
+	  $('#text .speaker').html(event.data);
 		setTime();
 	}
 
 	function setTime() {
 		var now = new Date();
-		$('.override > .speaker > span:first-child').text(now.toLocaleTimeString('en-US', {hour: '2-digit', minute:'2-digit'}));
+		$('#text .speaker > span:first-child').text(now.toLocaleTimeString('en-US', {hour: '2-digit', minute:'2-digit'}));
 	}
 
 	setTime();
