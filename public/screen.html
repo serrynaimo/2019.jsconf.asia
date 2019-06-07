@@ -53,7 +53,7 @@
 	setTime();
   setInterval(setTime, 5000)
   
-  choice = 0;
+  
   art = [{
     id: 'rainbowgrid',
     name: 'Rainbow Grid',
@@ -100,7 +100,6 @@
   	author: 'Nguyen Tuong Van',
   	url: 'https://codepen.io/tvan/pen/gyOJKm'
   }];
-
   artEl = document.getElementById('art');
   bgEl = document.getElementById('background');
 
@@ -108,23 +107,28 @@
     bgEl.classList.remove('hidden');
   }
 
+  choice = Math.floor((new Date()).getMinutes() / (60 / art.length));
+  window.onload = function () {
+    artEl.src = 'art/' + art[choice].id + '/index.html#96';
+    setInterval(setArt, 750);
+  }
+
   function setArt () {
+
+    var newChoice = Math.floor((new Date()).getMinutes() / (60 / art.length))
+
+    if (newChoice === choice) {
+      return
+    }
 
     bgEl.classList.add('hidden');
 
     setTimeout(function () {
-      var newChoice = Math.floor(Math.random() * art.length);
-      while (newChoice === choice) {
-        newChoice = Math.floor(Math.random() * art.length)
-      }
       choice = newChoice;
       artEl.src = 'art/' + art[choice].id + '/index.html#96';
     }, 10000);
 
   }
-
-  setArt();
-  setInterval(setArt, 300000);
 
   </script>
 
