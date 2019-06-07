@@ -38,6 +38,15 @@ h2 {
   font-style: italic;
 }
 
+.fade {
+  transition: opacity 9s linear;
+  opacity: 1;
+}
+
+.fade.hidden {
+  opacity: 0;
+}
+
 /* Close button */
 
 .burger {

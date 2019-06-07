@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<title>JSConf.Asia Singapore 2019</title>
 	<link href='//fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="css/app5.css" />
+	<link rel="stylesheet" type="text/css" href="css/app6.css" />
 	<link rel="shortcut icon" href="favicon.png" >
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	<meta property="og:title" content="JSConf.Asia - 14-16 June 2019, Singapore"/>
@@ -20,7 +20,7 @@
 </head>
 <body style="background: black; color: #fff; font-family: Arial, Helvetica, sans-serif;">
 
-  <div id="background" style="background-color: #222;">
+  <div id="background" style="background-color: #222;" class="fade hidden">
     <iframe src="" frameborder="0" id="art"></iframe>
   </div>
 
@@ -1227,17 +1227,44 @@
   	author: 'Nguyen Tuong Van',
   	url: 'https://codepen.io/tvan/pen/gyOJKm'
   }];
-  choice = Math.floor(Math.random() * art.length);
+
+  document.getElementById('art').onload = function () {
+    document.getElementById('background').classList.remove('hidden');
+  }
+
+  choice = Math.floor((new Date()).getMinutes() / (60 / art.length));
   if (localStorage && localStorage.getItem('animation')) {
     document.body.classList.add('noanim');
   }
   else {
     addEventListener('load', function () {
       document.getElementById('art').src = 'art/' + art[choice].id + '/index.html#96';
+      setInterval(setArt, 750);
     });
   }
   document.getElementById('artauthor').href = art[choice].url;
   document.getElementById('artauthor').innerHTML = 'Animation: ' + art[choice].name + '<br/>by ' + art[choice].author;
+
+  
+
+  function setArt () {
+
+    var newChoice = Math.floor((new Date()).getMinutes() / (60 / art.length))
+
+    if (newChoice === choice) {
+      return
+    }
+
+    document.getElementById('background').classList.add('hidden');
+
+    setTimeout(function () {
+      choice = newChoice;
+      document.getElementById('art').src = 'art/' + art[choice].id + '/index.html#96';
+      document.getElementById('artauthor').href = art[choice].url;
+      document.getElementById('artauthor').innerHTML = 'Animation: ' + art[choice].name + '<br/>by ' + art[choice].author;
+    }, 10000);
+
+  }
   </script>
 </body>
 </html>
