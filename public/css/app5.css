@@ -19,13 +19,13 @@ html, body {
 }
 
 #body #js svg {
-  width: 38vh;
+  width: 38vw;
   fill: #fff;
 }
 
 #body #date {
   font-family: 'Doppio One';
-  font-size: 3vh;
+  font-size: 3vw;
   color: #fff;
   text-shadow: 2px 2px 4px rgba(0,0,0,.5);
 }

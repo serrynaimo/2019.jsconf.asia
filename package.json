@@ -14,6 +14,7 @@
     "@http2/server": "^4.2.2"
   },
   "dependencies": {
+    "http-server": "^0.11.1",
     "iframe2image": "^0.2.1"
   }
 }
