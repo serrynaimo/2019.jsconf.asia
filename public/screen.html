@@ -41,6 +41,7 @@
 
 	function receiveMessage(event)
 	{
+    localStorage.setItem('item', event.data);
 	  $('#speakers .speaker').html(event.data);
 		setTime();
 	}
@@ -51,8 +52,12 @@
 	}
 
 	setTime();
-  setInterval(setTime, 5000)
-  
+  setInterval(setTime, 5000);
+
+  const item = localStorage.getItem('item');
+	if (item) {
+    $('#text .speaker').html(item);
+  }  
   
   art = [{
     id: 'rainbowgrid',
