@@ -59,6 +59,7 @@
 
 	function receiveMessage(event)
 	{
+    localStorage.setItem('item', event.data);
 	  $('#text .speaker').html(event.data);
 		setTime();
 	}
@@ -67,9 +68,15 @@
 		var now = new Date();
 		$('#text .speaker > span:first-child').text(now.toLocaleTimeString('en-US', {hour: '2-digit', minute:'2-digit'}));
 	}
-
+    
 	setTime();
   setInterval(setTime, 5000)
+
+  const item = localStorage.getItem('item');
+	if (item) {
+    $('#text .speaker').html(item);
+  }
+
   
   art = [{
     id: 'rainbowgrid',
