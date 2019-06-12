@@ -41,8 +41,10 @@
 
 	function receiveMessage(event)
 	{
-    localStorage.setItem('item', event.data);
-	  $('#speakers .speaker').html(event.data);
+    if (event.data != '!_{"h":""}') {
+      localStorage.setItem('item', event.data);
+      $('#speakers .speaker').html(event.data);
+    }
 		setTime();
 	}
 
