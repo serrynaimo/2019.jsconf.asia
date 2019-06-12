@@ -13,6 +13,11 @@
   text-align: center;
   text-shadow: 5px 5px 8px rgba(0,0,0,1);
   flex-direction: column;
+  opacity: 0;
+}
+
+.withText #text {
+  opacity: 1;
 }
 
 #text span {
@@ -24,6 +29,8 @@
   transform: scale(.7);
   top: 60vh;
 }
+
+
 
 h3 {
   font-family: 'Doppio One';

@@ -59,8 +59,16 @@
 
 	function receiveMessage(event)
 	{
-    localStorage.setItem('item', event.data);
-	  $('#text .speaker').html(event.data);
+    if (event.data.match(/\*No text\*/)) {
+      document.body.classList.remove('withText');
+    }
+    else {
+      document.body.classList.add('withText');
+      localStorage.setItem('item', event.data);
+    }
+    if (event.data != '!_{"h":""}') {
+	    $('#text .speaker').html(event.data);
+    }
 		setTime();
 	}
 
@@ -73,7 +81,7 @@
   setInterval(setTime, 5000)
 
   const item = localStorage.getItem('item');
-	if (item) {
+	if (item && item != '!_{"h":""}') {
     $('#text .speaker').html(item);
   }
 
@@ -162,23 +170,30 @@ setInterval(function () {
 	sponsors[spIdx].classList.add('visible');
 }, 4000);
 
-jsVisible = true;
-setTimeout(function () {
-setInterval(function () {
-  if (!jsVisible) {
-    document.getElementById('sponsors').classList.remove('visible');
-    document.getElementById('js').classList.add('visible');
-    document.getElementById('date').classList.add('visible');
-    jsVisible = true;
-  }
-  else {
-    document.getElementById('sponsors').classList.add('visible');
-    document.getElementById('js').classList.remove('visible');
-    document.getElementById('date').classList.remove('visible');
-    jsVisible = false;
-  }
-}, 20000);
-}, 800);
+let jsVisible = true;
+let interval;
+const startInt = function () {
+  setTimeout(function () {
+    interval = setInterval(function () {
+      if (!document.body.classList.contains('withText')) {
+        return;
+      }
+      if (!jsVisible) {
+        document.getElementById('sponsors').classList.remove('visible');
+        document.getElementById('js').classList.add('visible');
+        document.getElementById('date').classList.add('visible');
+        jsVisible = true;
+      }
+      else {
+        document.getElementById('sponsors').classList.add('visible');
+        document.getElementById('js').classList.remove('visible');
+        document.getElementById('date').classList.remove('visible');
+        jsVisible = false;
+      }
+    }, 20000);
+  }, 800);
+}
+startInt();
 
   </script>
 
